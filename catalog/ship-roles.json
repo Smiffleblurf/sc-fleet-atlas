@@ -1,0 +1,2090 @@
+{
+  "schema_version": 1,
+  "last_reviewed": "2026-11-01",
+  "note": "Unofficial, editorial profession/crew planning classifications, not live CIG specs. Community review encouraged.",
+  "lanes": [
+    {
+      "id": "COMBAT",
+      "label": "Combat & Security",
+      "roles": [
+        {
+          "id": "fighter",
+          "label": "Fighters / interceptors"
+        },
+        {
+          "id": "heavyfighter",
+          "label": "Heavy fighters"
+        },
+        {
+          "id": "strike",
+          "label": "Bombing / strike"
+        },
+        {
+          "id": "gunship",
+          "label": "Gunships / fire support"
+        },
+        {
+          "id": "warship",
+          "label": "Capital / fleet combat"
+        },
+        {
+          "id": "ew",
+          "label": "Interdiction / electronic warfare"
+        },
+        {
+          "id": "security",
+          "label": "Bounty hunting / security"
+        },
+        {
+          "id": "assault",
+          "label": "Dropship / boarding"
+        },
+        {
+          "id": "minelaying",
+          "label": "Mine warfare"
+        }
+      ]
+    },
+    {
+      "id": "TRANSPORT",
+      "label": "Trade & Transport",
+      "roles": [
+        {
+          "id": "courier",
+          "label": "Courier / light freight"
+        },
+        {
+          "id": "freight",
+          "label": "Mid-size freight"
+        },
+        {
+          "id": "heavyfreight",
+          "label": "Heavy freight / bulk haul"
+        },
+        {
+          "id": "passenger",
+          "label": "Passenger / hospitality"
+        },
+        {
+          "id": "data",
+          "label": "Data courier / intelligence"
+        },
+        {
+          "id": "carrier",
+          "label": "Vehicle / snub carrier"
+        },
+        {
+          "id": "commerce",
+          "label": "Commerce / trading"
+        }
+      ]
+    },
+    {
+      "id": "EXPLORATION",
+      "label": "Exploration & Travel",
+      "roles": [
+        {
+          "id": "scout",
+          "label": "Pathfinding / scouting"
+        },
+        {
+          "id": "expedition",
+          "label": "Expeditions / deep space"
+        },
+        {
+          "id": "touring",
+          "label": "Touring / leisure"
+        }
+      ]
+    },
+    {
+      "id": "INDUSTRY",
+      "label": "Industry & Research",
+      "roles": [
+        {
+          "id": "mining",
+          "label": "Ship-based mining"
+        },
+        {
+          "id": "salvage",
+          "label": "Salvage / reclamation"
+        },
+        {
+          "id": "refining",
+          "label": "Refining / processing"
+        },
+        {
+          "id": "science",
+          "label": "Science / research"
+        },
+        {
+          "id": "construction",
+          "label": "Construction / fabrication"
+        },
+        {
+          "id": "agriculture",
+          "label": "Agriculture / farming"
+        }
+      ]
+    },
+    {
+      "id": "SUPPORT",
+      "label": "Support & Services",
+      "roles": [
+        {
+          "id": "medical",
+          "label": "Medical / rescue"
+        },
+        {
+          "id": "repair",
+          "label": "Repair / maintenance"
+        },
+        {
+          "id": "fuel",
+          "label": "Ship refueling"
+        },
+        {
+          "id": "towing",
+          "label": "Recovery / towing"
+        },
+        {
+          "id": "handling",
+          "label": "Cargo handling / logistics"
+        },
+        {
+          "id": "reporting",
+          "label": "Reporting / media"
+        }
+      ]
+    },
+    {
+      "id": "RACING",
+      "label": "Competition",
+      "roles": [
+        {
+          "id": "racing",
+          "label": "Spacecraft racing"
+        }
+      ]
+    },
+    {
+      "id": "GROUND",
+      "label": "Ground Operations",
+      "roles": [
+        {
+          "id": "groundcombat",
+          "label": "Ground combat / anti-air"
+        },
+        {
+          "id": "groundscout",
+          "label": "Ground scouting / exploration"
+        },
+        {
+          "id": "groundutility",
+          "label": "Ground transport / utility"
+        },
+        {
+          "id": "groundracing",
+          "label": "Ground racing / recreation"
+        },
+        {
+          "id": "surfacemining",
+          "label": "Surface mining"
+        }
+      ]
+    },
+    {
+      "id": "FLEX",
+      "label": "Flexible / Generalist",
+      "roles": [
+        {
+          "id": "generalist",
+          "label": "Multi-role / general-purpose"
+        }
+      ]
+    }
+  ],
+  "rulebook": {
+    "100i": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "125a": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "135c": {
+      "role": "courier",
+      "tier": "solo",
+      "secondary": []
+    },
+    "300i": {
+      "role": "touring",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "315p Explorer": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "325a Fighter": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "350r Racer": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "400i": {
+      "role": "expedition",
+      "tier": "small",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "600i Executive Edition": {
+      "role": "touring",
+      "tier": "multi",
+      "secondary": [
+        "expedition"
+      ]
+    },
+    "890 JUMP": {
+      "role": "passenger",
+      "tier": "multi",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "A1 Spirit": {
+      "role": "strike",
+      "tier": "duo",
+      "secondary": []
+    },
+    "ATLS": {
+      "role": "handling",
+      "tier": "ground",
+      "secondary": []
+    },
+    "ATLS GEO": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "mining"
+      ]
+    },
+    "ATLS IKTI Akuma": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Apollo Medivac": {
+      "role": "medical",
+      "tier": "small",
+      "secondary": []
+    },
+    "Ares Inferno": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": [
+        "strike"
+      ]
+    },
+    "Ares Ion": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": [
+        "strike"
+      ]
+    },
+    "Arrastra": {
+      "role": "mining",
+      "tier": "multi",
+      "secondary": [
+        "refining"
+      ]
+    },
+    "Arrow": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Aurora Mk I SE": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "Aurora Mk II": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "Avenger Stalker": {
+      "role": "security",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "Ballista": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Blade": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Buccaneer": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "C1 Spirit": {
+      "role": "freight",
+      "tier": "duo",
+      "secondary": [
+        "generalist"
+      ]
+    },
+    "C8R Pisces": {
+      "role": "medical",
+      "tier": "solo",
+      "secondary": []
+    },
+    "C8X Pisces Expedition": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "CSV-SM": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "construction"
+      ]
+    },
+    "Carrack": {
+      "role": "expedition",
+      "tier": "multi",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "Caterpillar": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "Centurion": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Clipper": {
+      "role": "generalist",
+      "tier": "duo",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "Constellation Mk IV Andromeda": {
+      "role": "gunship",
+      "tier": "small",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "Constellation Mk IV Phoenix": {
+      "role": "passenger",
+      "tier": "small",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "Corsair": {
+      "role": "expedition",
+      "tier": "small",
+      "secondary": [
+        "gunship"
+      ]
+    },
+    "Crucible": {
+      "role": "repair",
+      "tier": "multi",
+      "secondary": []
+    },
+    "Cutlass Black": {
+      "role": "generalist",
+      "tier": "duo",
+      "secondary": [
+        "freight",
+        "assault"
+      ]
+    },
+    "Cutlass Blue": {
+      "role": "security",
+      "tier": "duo",
+      "secondary": [
+        "assault"
+      ]
+    },
+    "Cutlass Red": {
+      "role": "medical",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Cutter": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "Cutter Rambler": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "Cutter Scout": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Cyclone AA": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Cyclone MT": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Cyclone RC": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Cyclone RN": {
+      "role": "groundscout",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Cyclone TR": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Defender": {
+      "role": "fighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Dragonfly Black": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "E1 Spirit": {
+      "role": "passenger",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Eclipse": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Expanse": {
+      "role": "refining",
+      "tier": "small",
+      "secondary": []
+    },
+    "F7A Hornet Mk II": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "F7C-M Hornet Heartseeker Mk I": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "F8C Lightning": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "F8C Lightning Executive Edition": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Freelancer DUR": {
+      "role": "scout",
+      "tier": "small",
+      "secondary": [
+        "expedition"
+      ]
+    },
+    "Freelancer MAX": {
+      "role": "freight",
+      "tier": "small",
+      "secondary": []
+    },
+    "Fury": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Fury LX": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Fury MX": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": []
+    },
+    "G12": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "G12a": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "G12r": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Galaxy": {
+      "role": "generalist",
+      "tier": "multi",
+      "secondary": [
+        "medical",
+        "freight",
+        "refining"
+      ]
+    },
+    "Gladiator": {
+      "role": "strike",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Gladius Pirate Edition": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Gladius Valiant": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Glaive": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Golem": {
+      "role": "mining",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Hammerhead": {
+      "role": "warship",
+      "tier": "multi",
+      "secondary": [
+        "gunship"
+      ]
+    },
+    "Hawk": {
+      "role": "security",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "Herald": {
+      "role": "data",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Hercules Starlifter A2": {
+      "role": "strike",
+      "tier": "small",
+      "secondary": [
+        "carrier",
+        "heavyfreight"
+      ]
+    },
+    "Hercules Starlifter C2": {
+      "role": "heavyfreight",
+      "tier": "duo",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "Hercules Starlifter M2": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "HoverQuad": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "Hull A": {
+      "role": "courier",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Hull C": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": []
+    },
+    "Hurricane": {
+      "role": "heavyfighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Ironclad Assault": {
+      "role": "assault",
+      "tier": "multi",
+      "secondary": [
+        "heavyfreight",
+        "carrier"
+      ]
+    },
+    "Javelin": {
+      "role": "warship",
+      "tier": "fleet",
+      "secondary": []
+    },
+    "Khartu-al": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "Kraken Privateer": {
+      "role": "commerce",
+      "tier": "fleet",
+      "secondary": [
+        "carrier",
+        "warship"
+      ]
+    },
+    "L-22 Alpha Wolf": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Legionnaire": {
+      "role": "assault",
+      "tier": "small",
+      "secondary": [
+        "security"
+      ]
+    },
+    "Lynx": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "passenger"
+      ]
+    },
+    "M50": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "M80": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "MDC": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "MOLE": {
+      "role": "mining",
+      "tier": "small",
+      "secondary": []
+    },
+    "MPUV Cargo": {
+      "role": "handling",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "MPUV Personnel": {
+      "role": "passenger",
+      "tier": "solo",
+      "secondary": [
+        "handling"
+      ]
+    },
+    "MPUV Tractor": {
+      "role": "handling",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Mantis": {
+      "role": "ew",
+      "tier": "solo",
+      "secondary": [
+        "security"
+      ]
+    },
+    "Merchantman": {
+      "role": "commerce",
+      "tier": "multi",
+      "secondary": [
+        "heavyfreight",
+        "passenger"
+      ]
+    },
+    "Mercury Star Runner": {
+      "role": "data",
+      "tier": "small",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "Mule": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "handling"
+      ]
+    },
+    "Mustang Delta": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Mustang Gamma": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Nautilus": {
+      "role": "minelaying",
+      "tier": "multi",
+      "secondary": [
+        "warship"
+      ]
+    },
+    "Nomad": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "Nova Tank": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Nox": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Odyssey": {
+      "role": "expedition",
+      "tier": "multi",
+      "secondary": [
+        "refining"
+      ]
+    },
+    "P-52 Merlin": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "P-72 Archimedes": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "PTV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Paladin": {
+      "role": "gunship",
+      "tier": "small",
+      "secondary": []
+    },
+    "Polaris": {
+      "role": "warship",
+      "tier": "multi",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "Prospector": {
+      "role": "mining",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Prowler": {
+      "role": "assault",
+      "tier": "small",
+      "secondary": []
+    },
+    "Pulse": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundracing"
+      ]
+    },
+    "Pulse LX": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "RAFT": {
+      "role": "freight",
+      "tier": "duo",
+      "secondary": []
+    },
+    "ROC": {
+      "role": "surfacemining",
+      "tier": "ground",
+      "secondary": [
+        "mining"
+      ]
+    },
+    "ROC DS": {
+      "role": "surfacemining",
+      "tier": "ground",
+      "secondary": [
+        "mining"
+      ]
+    },
+    "Railen": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": []
+    },
+    "Ranger CV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Ranger RC": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Ranger TR": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Razor": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Razor EX": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "racing"
+      ]
+    },
+    "Reclaimer": {
+      "role": "salvage",
+      "tier": "multi",
+      "secondary": []
+    },
+    "Reliant Mako - News Van": {
+      "role": "reporting",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Reliant Sen - Researcher": {
+      "role": "science",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Reliant Tana - Skirmisher": {
+      "role": "fighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Retaliator": {
+      "role": "strike",
+      "tier": "multi",
+      "secondary": []
+    },
+    "SRV": {
+      "role": "towing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "STV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "Sabre": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Sabre Firebird": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "San'tok.yāi": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Scorpius": {
+      "role": "heavyfighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Scorpius Antares": {
+      "role": "ew",
+      "tier": "duo",
+      "secondary": [
+        "heavyfighter"
+      ]
+    },
+    "Spartan": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": [
+        "groundutility"
+      ]
+    },
+    "Starlite": {
+      "role": "fuel",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Storm": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Storm AA": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Syulen": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "Talon": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Talon Shrike": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": []
+    },
+    "Terrapin": {
+      "role": "scout",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Terrapin Medic": {
+      "role": "medical",
+      "tier": "duo",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "Tyilui": {
+      "role": "carrier",
+      "tier": "small",
+      "secondary": [
+        "gunship",
+        "repair"
+      ]
+    },
+    "UTV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Ursa Medivac": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "medical"
+      ]
+    },
+    "Ursa Rover": {
+      "role": "groundscout",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Valkyrie": {
+      "role": "assault",
+      "tier": "multi",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "Vanguard Harbinger": {
+      "role": "strike",
+      "tier": "duo",
+      "secondary": [
+        "heavyfighter"
+      ]
+    },
+    "Vanguard Sentinel": {
+      "role": "ew",
+      "tier": "duo",
+      "secondary": [
+        "heavyfighter"
+      ]
+    },
+    "Vanguard Warden": {
+      "role": "heavyfighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "Vulcan": {
+      "role": "repair",
+      "tier": "small",
+      "secondary": [
+        "fuel"
+      ]
+    },
+    "Vulture": {
+      "role": "salvage",
+      "tier": "solo",
+      "secondary": []
+    },
+    "X1": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": []
+    },
+    "X1 - FORCE": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "X1 - VELOCITY": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "Zeus Mk II CL": {
+      "role": "freight",
+      "tier": "small",
+      "secondary": []
+    },
+    "Zeus Mk II ES": {
+      "role": "expedition",
+      "tier": "small",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "Zeus Mk II MR": {
+      "role": "security",
+      "tier": "small",
+      "secondary": [
+        "ew"
+      ]
+    }
+  },
+  "codeRules": {
+    "ORIG_100i": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "ORIG_125a": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ORIG_135c": {
+      "role": "courier",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ORIG_300i": {
+      "role": "touring",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "ORIG_315p": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "ORIG_325a": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ORIG_350r": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ORIG_400i": {
+      "role": "expedition",
+      "tier": "small",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "ORIG_600i_Executive_Edition": {
+      "role": "touring",
+      "tier": "multi",
+      "secondary": [
+        "expedition"
+      ]
+    },
+    "ORIG_890Jump": {
+      "role": "passenger",
+      "tier": "multi",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "CRUS_Spirit_A1": {
+      "role": "strike",
+      "tier": "duo",
+      "secondary": []
+    },
+    "ARGO_ATLS": {
+      "role": "handling",
+      "tier": "ground",
+      "secondary": []
+    },
+    "ARGO_ATLS_GEO": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "mining"
+      ]
+    },
+    "ARGO_ATLS_IKTI_Akuma": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "RSI_Apollo_Medivac": {
+      "role": "medical",
+      "tier": "small",
+      "secondary": []
+    },
+    "CRUS_Ares_Inferno": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": [
+        "strike"
+      ]
+    },
+    "CRUS_Ares_Ion": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": [
+        "strike"
+      ]
+    },
+    "RSI_Arrastra": {
+      "role": "mining",
+      "tier": "multi",
+      "secondary": [
+        "refining"
+      ]
+    },
+    "ANVL_Arrow": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "RSI_Aurora_Mk_I_SE": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "RSI_Aurora_Mk_II": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "AEGS_Avenger_Stalker": {
+      "role": "security",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "ANVL_Ballista": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "VNCL_Blade": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "DRAK_Buccaneer": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "CRUS_Spirit_C1": {
+      "role": "freight",
+      "tier": "duo",
+      "secondary": [
+        "generalist"
+      ]
+    },
+    "ANVL_C8R_Pisces": {
+      "role": "medical",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ANVL_C8X_Pisces_Expedition": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "ARGO_CSV_SM": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "construction"
+      ]
+    },
+    "ANVL_Carrack": {
+      "role": "expedition",
+      "tier": "multi",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "DRAK_Caterpillar": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "ANVL_Centurion": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "DRAK_Clipper": {
+      "role": "generalist",
+      "tier": "duo",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "RSI_Constellation_Mk_IV_Andromeda": {
+      "role": "gunship",
+      "tier": "small",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "RSI_Constellation_Mk_IV_Phoenix": {
+      "role": "passenger",
+      "tier": "small",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "DRAK_Corsair": {
+      "role": "expedition",
+      "tier": "small",
+      "secondary": [
+        "gunship"
+      ]
+    },
+    "ANVL_Crucible": {
+      "role": "repair",
+      "tier": "multi",
+      "secondary": []
+    },
+    "DRAK_Cutlass_Black": {
+      "role": "generalist",
+      "tier": "duo",
+      "secondary": [
+        "freight",
+        "assault"
+      ]
+    },
+    "DRAK_Cutlass_Blue": {
+      "role": "security",
+      "tier": "duo",
+      "secondary": [
+        "assault"
+      ]
+    },
+    "DRAK_Cutlass_Red": {
+      "role": "medical",
+      "tier": "duo",
+      "secondary": []
+    },
+    "DRAK_Cutter": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "DRAK_Cutter_Rambler": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "touring"
+      ]
+    },
+    "DRAK_Cutter_Scout": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": []
+    },
+    "TMBL_Cyclone_AA": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "TMBL_Cyclone_MT": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "TMBL_Cyclone_RC": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "TMBL_Cyclone_RN": {
+      "role": "groundscout",
+      "tier": "ground",
+      "secondary": []
+    },
+    "TMBL_Cyclone_TR": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "BANU_Defender": {
+      "role": "fighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "DRAK_Dragonfly": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "CRUS_Spirit_E1": {
+      "role": "passenger",
+      "tier": "duo",
+      "secondary": []
+    },
+    "AEGS_Eclipse": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": []
+    },
+    "MISC_Expanse": {
+      "role": "refining",
+      "tier": "small",
+      "secondary": []
+    },
+    "ANVL_F7A_Hornet_Mk_II": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ANVL_F7C_M_Hornet_Heartseeker_Mk_I": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ANVL_Lightning_F8C": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "MISC_Freelancer_DUR": {
+      "role": "scout",
+      "tier": "small",
+      "secondary": [
+        "expedition"
+      ]
+    },
+    "MISC_Freelancer_MAX": {
+      "role": "freight",
+      "tier": "small",
+      "secondary": []
+    },
+    "MRAI_Fury": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "MRAI_Fury_LX": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "MRAI_Fury_MX": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ORIG_G12": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "ORIG_G12a": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "ORIG_G12r": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "RSI_Galaxy": {
+      "role": "generalist",
+      "tier": "multi",
+      "secondary": [
+        "medical",
+        "freight",
+        "refining"
+      ]
+    },
+    "ANVL_Gladiator": {
+      "role": "strike",
+      "tier": "duo",
+      "secondary": []
+    },
+    "AEGS_Gladius_Pirate_Edition": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "AEGS_Gladius_Valiant": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "VNCL_Glaive": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "DRAK_Golem": {
+      "role": "mining",
+      "tier": "solo",
+      "secondary": []
+    },
+    "AEGS_Hammerhead": {
+      "role": "warship",
+      "tier": "multi",
+      "secondary": [
+        "gunship"
+      ]
+    },
+    "ANVL_Hawk": {
+      "role": "security",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "DRAK_Herald": {
+      "role": "data",
+      "tier": "solo",
+      "secondary": []
+    },
+    "CRUS_Hercules_Starlifter_A2": {
+      "role": "strike",
+      "tier": "small",
+      "secondary": [
+        "carrier",
+        "heavyfreight"
+      ]
+    },
+    "CRUS_Hercules_Starlifter_C2": {
+      "role": "heavyfreight",
+      "tier": "duo",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "CRUS_Hercules_Starlifter_M2": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "CNOU_HoverQuad": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "MISC_Hull_A": {
+      "role": "courier",
+      "tier": "solo",
+      "secondary": []
+    },
+    "MISC_Hull_C": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": []
+    },
+    "ANVL_Hurricane": {
+      "role": "heavyfighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "DRAK_Ironclad_Assault": {
+      "role": "assault",
+      "tier": "multi",
+      "secondary": [
+        "heavyfreight",
+        "carrier"
+      ]
+    },
+    "AEGS_Javelin": {
+      "role": "warship",
+      "tier": "fleet",
+      "secondary": []
+    },
+    "XIAN_Scout": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "DRAK_Kraken_Privateer": {
+      "role": "commerce",
+      "tier": "fleet",
+      "secondary": [
+        "carrier",
+        "warship"
+      ]
+    },
+    "KRIG_L_22_Alpha_Wolf": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ANVL_Legionnaire": {
+      "role": "assault",
+      "tier": "small",
+      "secondary": [
+        "security"
+      ]
+    },
+    "RSI_Lynx": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "passenger"
+      ]
+    },
+    "ORIG_m50": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ORIG_M80": {
+      "role": "heavyfighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "GRIN_MDC": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "ARGO_MOLE": {
+      "role": "mining",
+      "tier": "small",
+      "secondary": []
+    },
+    "ARGO_MPUV": {
+      "role": "handling",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "ARGO_MPUV_Transport": {
+      "role": "passenger",
+      "tier": "solo",
+      "secondary": [
+        "handling"
+      ]
+    },
+    "ARGO_MPUV_Tractor": {
+      "role": "handling",
+      "tier": "solo",
+      "secondary": []
+    },
+    "RSI_Mantis": {
+      "role": "ew",
+      "tier": "solo",
+      "secondary": [
+        "security"
+      ]
+    },
+    "BANU_Merchantman": {
+      "role": "commerce",
+      "tier": "multi",
+      "secondary": [
+        "heavyfreight",
+        "passenger"
+      ]
+    },
+    "CRUS_Star_Runner": {
+      "role": "data",
+      "tier": "small",
+      "secondary": [
+        "freight"
+      ]
+    },
+    "DRAK_Mule": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "handling"
+      ]
+    },
+    "CNOU_Mustang_Delta": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "CNOU_Mustang_Gamma": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "AEGS_Nautilus": {
+      "role": "minelaying",
+      "tier": "multi",
+      "secondary": [
+        "warship"
+      ]
+    },
+    "CNOU_Nomad": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "TMBL_Nova": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "XIAN_Nox": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "MISC_Odyssey": {
+      "role": "expedition",
+      "tier": "multi",
+      "secondary": [
+        "refining"
+      ]
+    },
+    "KRIG_P52_Merlin": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "KRIG_P72_Archimedes": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "GRIN_PTV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": []
+    },
+    "ANVL_Paladin": {
+      "role": "gunship",
+      "tier": "small",
+      "secondary": []
+    },
+    "RSI_Polaris": {
+      "role": "warship",
+      "tier": "multi",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "MISC_Prospector": {
+      "role": "mining",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ESPR_Prowler": {
+      "role": "assault",
+      "tier": "small",
+      "secondary": []
+    },
+    "MRAI_Pulse": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundracing"
+      ]
+    },
+    "MRAI_Pulse_LX": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "ARGO_RAFT": {
+      "role": "freight",
+      "tier": "duo",
+      "secondary": []
+    },
+    "GRIN_ROC": {
+      "role": "surfacemining",
+      "tier": "ground",
+      "secondary": [
+        "mining"
+      ]
+    },
+    "GAMA_Railen": {
+      "role": "heavyfreight",
+      "tier": "small",
+      "secondary": []
+    },
+    "TMBL_Ranger_CV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": []
+    },
+    "TMBL_Ranger_RC": {
+      "role": "groundracing",
+      "tier": "ground",
+      "secondary": []
+    },
+    "TMBL_Ranger_TR": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "MISC_Razor": {
+      "role": "racing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "MISC_Razor_EX": {
+      "role": "scout",
+      "tier": "solo",
+      "secondary": [
+        "racing"
+      ]
+    },
+    "AEGS_Reclaimer": {
+      "role": "salvage",
+      "tier": "multi",
+      "secondary": []
+    },
+    "MISC_Reliant_Mako": {
+      "role": "reporting",
+      "tier": "duo",
+      "secondary": []
+    },
+    "MISC_Reliant_Sen": {
+      "role": "science",
+      "tier": "duo",
+      "secondary": []
+    },
+    "MISC_Reliant_Tana": {
+      "role": "fighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "AEGS_Retaliator": {
+      "role": "strike",
+      "tier": "multi",
+      "secondary": []
+    },
+    "ARGO_SRV": {
+      "role": "towing",
+      "tier": "solo",
+      "secondary": []
+    },
+    "GRIN_STV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "groundscout"
+      ]
+    },
+    "AEGS_Sabre": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "AEGS_Sabre_Firebird": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": [
+        "fighter"
+      ]
+    },
+    "XIAN_Santok_yai": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "RSI_Scorpius": {
+      "role": "heavyfighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "RSI_Scorpius_Antares": {
+      "role": "ew",
+      "tier": "duo",
+      "secondary": [
+        "heavyfighter"
+      ]
+    },
+    "ANVL_Spartan": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": [
+        "groundutility"
+      ]
+    },
+    "MISC_Starlite": {
+      "role": "fuel",
+      "tier": "solo",
+      "secondary": []
+    },
+    "TMBL_Storm": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "TMBL_Storm_AA": {
+      "role": "groundcombat",
+      "tier": "ground",
+      "secondary": []
+    },
+    "GAMA_Syulen": {
+      "role": "generalist",
+      "tier": "solo",
+      "secondary": [
+        "courier"
+      ]
+    },
+    "ESPR_Talon": {
+      "role": "fighter",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ESPR_Talon_Shrike": {
+      "role": "strike",
+      "tier": "solo",
+      "secondary": []
+    },
+    "ANVL_Terrapin": {
+      "role": "scout",
+      "tier": "duo",
+      "secondary": []
+    },
+    "ANVL_Terrapin_Medic": {
+      "role": "medical",
+      "tier": "duo",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "GAMA_Tyilui": {
+      "role": "carrier",
+      "tier": "small",
+      "secondary": [
+        "gunship",
+        "repair"
+      ]
+    },
+    "GRIN_UTV": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": []
+    },
+    "RSI_Ursa_Medivac": {
+      "role": "groundutility",
+      "tier": "ground",
+      "secondary": [
+        "medical"
+      ]
+    },
+    "RSI_Ursa": {
+      "role": "groundscout",
+      "tier": "ground",
+      "secondary": []
+    },
+    "ANVL_Valkyrie": {
+      "role": "assault",
+      "tier": "multi",
+      "secondary": [
+        "carrier"
+      ]
+    },
+    "AEGS_Vanguard_Harbinger": {
+      "role": "strike",
+      "tier": "duo",
+      "secondary": [
+        "heavyfighter"
+      ]
+    },
+    "AEGS_Vanguard_Sentinel": {
+      "role": "ew",
+      "tier": "duo",
+      "secondary": [
+        "heavyfighter"
+      ]
+    },
+    "AEGS_Vanguard_Warden": {
+      "role": "heavyfighter",
+      "tier": "duo",
+      "secondary": []
+    },
+    "AEGS_Vulcan": {
+      "role": "repair",
+      "tier": "small",
+      "secondary": [
+        "fuel"
+      ]
+    },
+    "DRAK_Vulture": {
+      "role": "salvage",
+      "tier": "solo",
+      "secondary": []
+    },
+    "RSI_Zeus_Mk_II_CL": {
+      "role": "freight",
+      "tier": "small",
+      "secondary": []
+    },
+    "RSI_Zeus_Mk_II_ES": {
+      "role": "expedition",
+      "tier": "small",
+      "secondary": [
+        "scout"
+      ]
+    },
+    "RSI_Zeus_Mk_II_MR": {
+      "role": "security",
+      "tier": "small",
+      "secondary": [
+        "ew"
+      ]
+    }
+  }
+}
