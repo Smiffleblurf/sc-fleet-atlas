@@ -154,8 +154,14 @@ function updateImportSource(){
  el('datatag').textContent=`Source: ${importedFilename}${unknown?' · '+unknown+' need classification':''}`;
 }
 function catalogStatus(label){el('catalogStatus').textContent=`Catalog: ${label}`}
+// Display local time down to the second so consecutive manual checks are observable.
+function catalogCheckTime(value){
+ const time=Number(value);
+ if(!Number.isFinite(time)||time<=0)return 'unknown time';
+ return new Intl.DateTimeFormat(undefined,{year:'numeric',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit',timeZoneName:'short'}).format(new Date(time));
+}
 function readPublicCache(){try{const cache=JSON.parse(localStorage.getItem(CATALOG_CACHE_KEY)||'null');if(cache&&Array.isArray(cache.rows)&&cache.rows.length>30)return cache}catch(_){ }return null}
-function storePublicCache(rows){try{localStorage.setItem(CATALOG_CACHE_KEY,JSON.stringify({rows,checked:Date.now()}))}catch(_){ }}
+function storePublicCache(rows,checked){try{localStorage.setItem(CATALOG_CACHE_KEY,JSON.stringify({rows,checked}))}catch(_){ }}
 async function fetchPublicCatalogPage(page,endpoint=LIVE_CATALOG_URL){
  const url=new URL(endpoint);
  url.searchParams.set('page[size]','200');url.searchParams.set('page[number]',String(page));
@@ -205,7 +211,7 @@ async function syncPublicCatalog(force=false){
  const btn=el('checkUpdates');btn.disabled=true;
  const cached=readPublicCache();
  if(cached){rebuildReferenceModels(cached.rows);repairUnknownFleetEntries();render()}
- if(!force && cached && Date.now()-cached.checked<CATALOG_CACHE_AGE){catalogStatus(`${referenceModels.length} models · cached public data`);btn.disabled=false;return}
+ if(!force && cached && Date.now()-cached.checked<CATALOG_CACHE_AGE){catalogStatus(`${referenceModels.length} models · cached public data · last checked ${catalogCheckTime(cached.checked)}`);btn.disabled=false;return}
  catalogStatus(`${referenceModels.length} models · checking public source…`);
  try{
   const {rows,source}=await getPublicModels();
@@ -219,12 +225,16 @@ async function syncPublicCatalog(force=false){
    is_gravlev:x.is_gravlev===true,
    manufacturer:englishLabel(x.manufacturer)
   })).filter(x=>x.name).slice(0,1800);
-  rebuildReferenceModels(distilled);storePublicCache(distilled);repairUnknownFleetEntries();render();
+  rebuildReferenceModels(distilled);
+  const checkedAt=Date.now();
+  storePublicCache(distilled,checkedAt);repairUnknownFleetEntries();render();
   const unknown=referenceModels.filter(x=>x.role==='review').length;
-  catalogStatus(`${referenceModels.length} models · updated from ${source}${unknown?' · '+unknown+' need role review':''}`);
+  catalogStatus(`${referenceModels.length} models · updated from ${source} · checked ${catalogCheckTime(checkedAt)}${unknown?' · '+unknown+' need role review':''}`);
  }catch(error){
-  // Remote source may be blocked, offline, rate-limited, or unavailable from file://.
-  catalogStatus(`${referenceModels.length} models · ${cached?'cached':'offline snapshot'} (live check unavailable)`);
+  // A failed check must not imply that the catalog was successfully updated.
+  const attemptedAt=catalogCheckTime(Date.now());
+  const lastGood=cached?` · last successful check ${catalogCheckTime(cached.checked)}`:'';
+  catalogStatus(`${referenceModels.length} models · ${cached?'cached':'offline snapshot'} · live check unavailable at ${attemptedAt}${lastGood}`);
  }finally{btn.disabled=false}
 }
 
