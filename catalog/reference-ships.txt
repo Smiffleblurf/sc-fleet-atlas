@@ -1,0 +1,246 @@
+Avenger Stalker|Combat|Interdiction|1
+Avenger Titan|Transport|Light Freight|1
+Avenger Titan Renegade|Transport|Light Freight|1
+Avenger Warlock|Combat|Interdiction|1
+Eclipse|Combat|Stealth Bomber|1
+Gladius|Combat|Light Fighter|1
+Gladius Pirate Edition|Combat|Light Fighter|1
+Gladius Valiant|Combat|Light Fighter|1
+Hammerhead|Combat|Heavy Gunship|9
+Idris-M|Combat|Frigate|28
+Idris-P|Combat|Frigate|28
+Javelin|Combat|Destroyer|65
+Nautilus|Combat|Minelayer|8
+Reclaimer|Industrial|Heavy Salvage|5
+Redeemer|Combat|Gunship|4
+Retaliator|Combat|Modular Gunship|7
+Sabre|Combat|Stealth Fighter|1
+Sabre Comet|Combat|Medium Fighter|1
+Sabre Firebird|Combat|Medium Fighter|1
+Sabre Peregrine|Competition|Racing|1
+Sabre Raven|Combat|Interdiction|1
+Sabre Raven EX|Combat|Medium Fighter|1
+Tiburon|Combat|Heavy Gunship|7
+Vanguard Harbinger|Combat|Bomber|2
+Vanguard Hoplite|Combat|Dropship|1
+Vanguard Sentinel|Combat|Interdiction|2
+Vanguard Warden|Combat|Heavy Fighter|2
+Vulcan|Multi|Medium Repair / Medium Refuel|3
+Arrow|Combat|Light Fighter|1
+Asgard|Combat|Dropship|2
+Ballista|Combat|Military|2
+C8 Pisces|Exploration|Exploration|3
+C8R Pisces|Support|Medical|2
+C8X Pisces Expedition|Exploration|Expedition|3
+Carrack|Exploration|Expedition|6
+Centurion|Ground|Combat|2
+Crucible|Support|Heavy Repair|8
+F7A Hornet Mk I|Combat|Medium Fighter|1
+F7A Hornet Mk II|Combat|Medium Fighter|1
+F7C Hornet Mk I|Combat|Medium Fighter|1
+F7C Hornet Mk II|Combat|Medium Fighter|1
+F7C Hornet Wildfire Mk I|Combat|Medium Fighter|1
+F7C-M Super Hornet Heartseeker Mk I|Combat|Medium Fighter|2
+F7C-M Super Hornet Mk I|Combat|Medium Fighter|2
+F7C-M Super Hornet Mk II|Combat|Medium Fighter|2
+F7C-R Hornet Tracker Mk I|Combat|Pathfinder|1
+F7C-R Hornet Tracker Mk II|Combat|Pathfinder|1
+F7C-S Hornet Ghost Mk I|Combat|Stealth Fighter|1
+F7C-S Hornet Ghost Mk II|Combat|Stealth Fighter|1
+F8C Lightning|Combat|Heavy Fighter|1
+F8C Lightning Executive Edition|Combat|Heavy Fighter|1
+Gladiator|Combat|Bomber|2
+Hawk|Combat|Light Fighter|1
+Hurricane|Combat|Heavy Fighter|2
+Legionnaire|Combat|Boarding|2
+Liberator|Transport|Light Carrier|2
+Odin|Combat|Battlecruiser|65
+Paladin|Combat|Gunship|4
+Spartan|Ground|Transport|1
+Terrapin|Exploration|Pathfinder|1
+Terrapin Medic|Support|Medical|2
+Valkyrie|Combat|Dropship|5
+Khartu-Al|Combat|Light Fighter|1
+Nox|Competition|Racing|1
+Nox Kue|Competition|Racing|1
+San'tok.yāi|Combat|Medium Fighter|1
+ATLS|Ground|Industrial|1
+ATLS GEO|Ground|Industrial|1
+ATLS IKTI Akuma|Ground|Combat|1
+CSV-SM|Ground|Freight|1
+MOLE|Industrial|Prospecting / Mining|4
+MOTH|Industrial|Medium Salvage|4
+MPUV Cargo|Transport|Light Freight|1
+MPUV Personnel|Transport|Passenger|1
+MPUV Tractor|Transport|Cargo Loader|1
+RAFT|Transport|Medium Freight|2
+SRV|Support|Recovery|1
+Defender|Combat|Light Fighter|2
+Merchantman|Transport|Heavy Freight|8
+HoverQuad|Ground|Racing|1
+Mustang Alpha|Multi|Cargo|1
+Mustang Beta|Exploration|Pathfinder|1
+Mustang Delta|Combat|Light Fighter|1
+Mustang Gamma|Competition|Racing|1
+Mustang Omega|Competition|Racing|1
+Nomad|Multi|Starter|1
+Pioneer|Multi|Heavy Construction|8
+A1 Spirit|Combat|Bomber|2
+A2 Hercules|Combat|Heavy Bomber|6
+Ares Inferno|Combat|Heavy Fighter|1
+Ares Ion|Combat|Heavy Fighter|1
+C1 Spirit|Transport|Medium Freight|2
+C2 Hercules|Transport|Heavy Freight|2
+E1 Spirit|Transport|Passenger|2
+Genesis|Transport|Passenger|8
+Intrepid|Transport|Light Freight|1
+M2 Hercules|Combat|Military Transport|3
+Mercury Star Runner|Transport|Medium Cargo / Medium Data|3
+Buccaneer|Combat|Interdiction|1
+Caterpillar|Transport|Heavy Freight|4
+Clipper|Exploration|Generalist|1
+Corsair|Exploration|Expedition|4
+Cutlass Black|Multi|Medium Freight|2
+Cutlass Blue|Combat|Interdiction|3
+Cutlass Red|Support|Medical|2
+Cutlass Steel|Combat|Dropship|3
+Cutter|Transport|Starter / Light Freight|1
+Cutter Rambler|Exploration|Starter / Expedition|1
+Cutter Scout|Exploration|Reconnaissance / Intelligence|1
+Dragonfly Black|Competition|Racing|2
+Dragonfly Starkitten Edition|Competition|Racing|2
+Dragonfly Yellowjacket|Competition|Racing|2
+Golem|Industrial|Mining|1
+Golem OX|Transport|Light Freight|1
+Herald|Transport|Medium Data|1
+Ironclad|Transport|Heavy Freight|7
+Ironclad Assault|Combat|Heavy Dropship|7
+Kraken|Industrial|Multi-Role / Light Carrier|10
+Kraken Privateer|Industrial|Multi-Role / Light Carrier|10
+Mule|Ground|Transport|1
+Pitbull|Combat|Snub Fighter|1
+Vulture|Industrial|Light Salvage|1
+Blade|Combat|Light Fighter|1
+Glaive|Combat|Medium Fighter|1
+Prowler|Combat|Dropship|2
+Prowler Utility|Transport|Cargo|2
+Stinger|Combat|Heavy Fighter|1
+Talon|Combat|Light Fighter|1
+Talon Shrike|Combat|Light Fighter|1
+Railen|Transport|Medium Freight|4
+Syulen|Multi|Starter|1
+Tyilui|Transport|Snub Carrier|4
+Basher|Combat|Light Fighter|1
+Shiv|Combat|Heavy Fighter|2
+MDC|Ground|Anti-Air|1
+MTC|Ground|Combat|1
+PTV|Ground|Touring|2
+ROC|Industrial|Mining|1
+ROC-DS|Industrial|Mining|2
+STV|Ground|Transport|2
+UTV|Ground|Transporter|2
+L-21 Wolf|Combat|Light Fighter|1
+L-22 Alpha Wolf|Combat|Light Fighter|1
+P-52 Merlin|Combat|Snub Fighter|1
+P-72 Archimedes|Competition|Racing|1
+S-65 Stingray|Combat|Medium Fighter|1
+Endeavor|Industrial|Heavy Science|5
+Expanse|Industrial|Refinery|1
+Fortune|Industrial|Salvage|1
+Freelancer|Transport|Medium Freight|4
+Freelancer DUR|Exploration|Expedition|4
+Freelancer MAX|Transport|Medium Freight|4
+Freelancer MIS|Combat|Gun Ship|4
+Hull A|Industrial|Medium Freight|1
+Hull B|Transport|Medium Hauler|2
+Hull C|Transport|Heavy Freight|4
+Hull D|Transport|Heavy Freight|5
+Hull E|Transport|Heavy Freight|5
+Odyssey|Exploration|Expedition|6
+Prospector|Industrial|Prospecting / Mining|1
+Reliant Kore|Multi|Starter / Light Freight|2
+Reliant Mako|Support|Reporting|2
+Reliant Sen|Industrial|Light Science|2
+Reliant Tana|Combat|Light Fighter|2
+Starfarer|Support|Heavy Refueling|8
+Starfarer Gemini|Support|Heavy Refueling|6
+Starlancer MAX|Transport|Medium Freight|4
+Starlancer TAC|Combat|Patrol|8
+Starlite|Support|Light Refueler|1
+Fury|Combat|Snub Fighter|1
+Fury LX|Competition|Racing|1
+Fury MX|Combat|Snub Fighter|1
+Guardian|Combat|Heavy Fighter|1
+Guardian MX|Combat|Heavy Fighter|1
+Guardian QI|Combat|Heavy Fighter|1
+Pulse|Ground|Combat|1
+Pulse LX|Ground|Racing|1
+Razor|Competition|Racing|1
+Razor EX|Competition|Stealth|1
+Razor LX|Competition|Luxury|1
+100i|Multi|Starter / Touring|1
+125a|Multi|Starter / Light Fighter|1
+135c|Multi|Starter / Light Freight|1
+300i|Multi|Luxury / Touring|1
+315p|Exploration|Pathfinder|1
+325a|Combat|Interdiction / Light Fighter|1
+350r|Competition|Racing|1
+400i|Exploration|Touring|3
+600i Executive-Edition|Exploration||1
+600i Explorer|Exploration|Expedition|5
+600i Touring|Exploration|Touring|5
+85X|Exploration|Touring|2
+890 Jump|Exploration|Luxury Touring|8
+G12|Ground|Touring|1
+G12a|Ground|Military|1
+G12r|Competition|Racing|1
+M50|Competition|Racing|1
+M80|Combat|Heavy Fighter|1
+X1|Exploration|Touring|1
+X1 Force|Exploration|Combat|1
+X1 Velocity|Competition|Racing|1
+Apollo Medivac|Support|Medical|2
+Apollo Triage|Support|Medical|2
+Arrastra|Industrial|Mining / Refining|5
+Aurora Mk I CL|Transport|Light Freight|1
+Aurora Mk I ES|Multi|Starter / Pathfinder|1
+Aurora Mk I LN|Transport|Light Fighter|1
+Aurora Mk I LX|Exploration|Pathfinder|1
+Aurora Mk I MR|Transport|Light Fighter|1
+Aurora Mk I SE|Transport|Light Fighter|1
+Aurora Mk II|Transport|Light Fighter|1
+Bengal|Combat|Carrier|1
+Constellation Andromeda|Multi|Medium Freight / Gun Ship|4
+Constellation Aquila|Exploration|Expedition|4
+Constellation Phoenix|Exploration|Luxury Touring|4
+Constellation Taurus|Transport|Medium Freight|4
+Galaxy|Multi|Modular|6
+Hermes|Transport|Medium Freighter|2
+Lynx|Ground|Luxury Transport / Explorer|2
+Mantis|Combat|Interdictor|1
+Meteor|Combat|Medium Fighter|1
+Orion|Industrial|Heavy Mining|7
+Perseus|Combat|Heavy Gunship|7
+Polaris|Combat|Corvette|12
+Salvation|Industrial|Light Salvage|1
+Scorpius|Combat|Heavy Fighter|2
+Scorpius Antares|Combat|Heavy Fighter|2
+Ursa|Ground|Exploration|2
+Ursa Fortuna|Ground|Exploration|2
+Ursa Medivac|Ground|Ambulance|3
+Zeus Mk II CL|Transport|Medium Freight|3
+Zeus Mk II ES|Exploration|Expedition|3
+Zeus Mk II MR|Combat|Interdiction|3
+Cyclone|Ground|Exploration / Recon|2
+Cyclone AA|Ground|Anti-aircraft|2
+Cyclone MT|Ground|Assault|3
+Cyclone RC|Ground|Racing|2
+Cyclone RN|Ground|Recon|2
+Cyclone TR|Ground|Combat|3
+Nova|Ground|Combat|3
+Ranger CV|Ground|Touring|1
+Ranger RC|Ground|Racing|1
+Ranger TR|Ground|Combat|1
+Storm|Ground|Combat Support|1
+Storm AA|Ground|Combat Support|1
+Scythe|Combat|Medium Fighter|1
