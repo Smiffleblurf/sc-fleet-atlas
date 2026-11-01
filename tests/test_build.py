@@ -69,6 +69,13 @@ class BuildTests(unittest.TestCase):
         self.assertIn('live check unavailable at ${attemptedAt}', self.html)
         self.assertIn('last successful check ${catalogCheckTime(cached.checked)}', self.html)
 
+    def test_flexible_generalist_lane_first(self):
+        # Matrix and career lane filter follow the source catalog ordering.
+        self.assertEqual(self.catalog['lanes'][0]['id'], 'FLEX')
+        self.assertEqual(self.bundle['lanes'][0]['id'], 'FLEX')
+        self.assertEqual([lane['id'] for lane in self.bundle['lanes']],
+                         [lane['id'] for lane in self.catalog['lanes']])
+
     def test_built_index_matches_current_sources(self):
         # Prevent a future source edit from silently undoing the previewed HTML.
         self.assertEqual(self.html, self.template.replace(

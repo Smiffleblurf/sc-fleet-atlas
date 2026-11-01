@@ -4,6 +4,16 @@
   "note": "Unofficial, editorial profession/crew planning classifications, not live CIG specs. Community review encouraged.",
   "lanes": [
     {
+      "id": "FLEX",
+      "label": "Flexible / Generalist",
+      "roles": [
+        {
+          "id": "generalist",
+          "label": "Multi-role / general-purpose"
+        }
+      ]
+    },
+    {
       "id": "COMBAT",
       "label": "Combat & Security",
       "roles": [
@@ -190,16 +200,6 @@
         {
           "id": "surfacemining",
           "label": "Surface mining"
-        }
-      ]
-    },
-    {
-      "id": "FLEX",
-      "label": "Flexible / Generalist",
-      "roles": [
-        {
-          "id": "generalist",
-          "label": "Multi-role / general-purpose"
         }
       ]
     }
