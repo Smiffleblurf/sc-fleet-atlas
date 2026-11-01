@@ -76,6 +76,19 @@ class BuildTests(unittest.TestCase):
         self.assertEqual([lane['id'] for lane in self.bundle['lanes']],
                          [lane['id'] for lane in self.catalog['lanes']])
 
+    def test_search_discovery_metadata(self):
+        # Public-facing SEO metadata is present in generated and source HTML.
+        canonical = 'https://smiffleblurf.github.io/sc-fleet-atlas/'
+        self.assertIn('<title>Star Citizen Fleet Atlas | Ship Profession Map & Fleet Coverage</title>', self.html)
+        self.assertIn('name="description"', self.html)
+        self.assertIn('rel="canonical" href="' + canonical + '"', self.html)
+        self.assertIn('property="og:title"', self.html)
+        self.assertIn('property="og:description"', self.html)
+        self.assertIn('property="og:url"', self.html)
+        self.assertIn('<title>Star Citizen Fleet Atlas | Ship Profession Map & Fleet Coverage</title>', self.template)
+        sitemap = (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+        self.assertIn('<loc>' + canonical + '</loc>', sitemap)
+
     def test_built_index_matches_current_sources(self):
         # Prevent a future source edit from silently undoing the previewed HTML.
         self.assertEqual(self.html, self.template.replace(
