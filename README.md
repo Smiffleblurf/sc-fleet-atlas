@@ -1,6 +1,8 @@
 # Star Citizen Fleet Atlas (SCFA)
 A community profession map for Star Citizen
 
+**[Launch SC Fleet Atlas](https://smiffleblurf.github.io/sc-fleet-atlas/)** — free, browser-based profession matrix and fleet coverage tool.
+
 An **unofficial, free, non-commercial fan project** for mapping an imported Star Citizen fleet by career and approximate crew-operating tier. Inspired by the profession-planning approach of StarShip42 ProfessionMap, but not affiliated with its creator.
 
 The loss of StarShip42's ProfessionMap was immense. Having a high level overview of what ships you have against what profession roles was useful to see what gaps existed in your fleet, but what this does even better is help articulate those role gaps in your fleet!
