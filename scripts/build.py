@@ -14,6 +14,13 @@ for book in ('rulebook', 'codeRules'):
         assert row['role'] in ROLE_IDS, (book, name, 'invalid role')
         assert row['tier'] in TIERS, (book, name, 'invalid tier')
         assert all(x in ROLE_IDS for x in row['secondary']), (book, name, 'invalid secondary')
+        module_roles = row.get('moduleRoles', [])
+        assert len({m['role'] for m in module_roles}) == len(module_roles), (book, name, 'duplicate module role')
+        for module in module_roles:
+            assert module['role'] in ROLE_IDS, (book, name, 'invalid module role')
+            assert module['role'] not in row['secondary'] and module['role'] != row['role'], (book, name, 'module role overlaps inherent role')
+            assert module['status'] in ('available', 'planned'), (book, name, 'invalid module status')
+            assert isinstance(module['module'], str) and module['module'].strip(), (book, name, 'unnamed module')
 
 # An offline reference snapshot, not a live API. Public classification/focus labels from
 # the community FleetYards-derived meoiswa/rsi-ship-matrix ship list. The references
