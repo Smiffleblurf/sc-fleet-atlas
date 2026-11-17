@@ -37,6 +37,15 @@ For background, see the [Galaxy specifications](https://robertsspaceindustries.c
 
 Open `index.html` in a modern browser, or use GitHub Pages. Click **Import fleet JSON** and choose your local `shiplist.json`. No hangar file is sent to a server. Online reference refreshes depend on browser cross-origin permissions (CORS), source uptime, and network access; the bundled snapshot works offline. The primary public ship data source is [Star Citizen Wiki API](https://docs.star-citizen.wiki/) (community-maintained, **not** an official CIG API). The bundled offline reference and optional secondary live fallback are based on public ship names and roles from the community-maintained [RSI Ship Matrix project](https://github.com/meoiswa/rsi-ship-matrix), which draws on FleetYards data. These secondary entries may be older or classified differently from the Wiki.
 
+### Get your hangar JSON
+
+1. Install [HangarXPLOR](https://hangarxplor.space/) from the [Chrome Web Store](https://chromewebstore.google.com/detail/hangarxplor/bhkgemjdepodofcnmekdobmmbifemhkc/), [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/star-citizen-hangar-xplorer/), or [Opera Add-ons](https://addons.opera.com/en/extensions/details/star-citizen-hangar-xplorer/).
+2. Sign in and visit your [RSI My Hangar](https://robertsspaceindustries.com/account/pledges). Let HangarXPLOR finish loading the hangar pages.
+3. Use HangarXPLOR's ship export in **Hangar Transfer Format (JSON)**, rather than CSV, and save the downloaded file.
+4. Open Fleet Atlas and select **Import fleet JSON**. The file is parsed locally and is never uploaded.
+
+**Chrome is not required.** HangarXPLOR provides extensions for Chrome, Firefox, and Opera. Fleet Atlas itself runs in modern browsers, independent of where the JSON was exported. The official HangarXPLOR project lists Edge support as on hold and Safari as requiring a manual extension build.
+
 ### Publish on GitHub Pages
 
 The current live repository publishes **Deploy from a branch → `main` → `/(root)`**. After your pull request is merged, GitHub Pages serves the committed root `index.html` file. A deployment does **not** automatically rebuild it from sources.

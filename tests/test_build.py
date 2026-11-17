@@ -120,6 +120,30 @@ class BuildTests(unittest.TestCase):
         self.assertIn('#9a75fc', favicon)
         self.assertIn('#398cbb', favicon)
 
+    def test_hangarxplor_import_guidance_and_browser_support(self):
+        # Help is reachable from an empty fleet and remains available after import.
+        for html in (self.template, self.html):
+            self.assertIn('id="importGuide"', html)
+            self.assertIn('id="openImportGuide"', html)
+            self.assertIn('Hangar Transfer Format (JSON)', html)
+            self.assertIn('Chrome is not required', html)
+            self.assertIn('https://hangarxplor.space/', html)
+            self.assertIn('https://addons.mozilla.org/en-US/firefox/addon/star-citizen-hangar-xplorer/', html)
+            self.assertIn('https://chromewebstore.google.com/detail/hangarxplor/', html)
+            self.assertIn('https://robertsspaceindustries.com/account/pledges', html)
+            self.assertIn("el('importGuide').open=true", html)
+
+    def test_import_guide_shimmer_finishes_and_respects_reduced_motion(self):
+        for html in (self.template, self.html):
+            self.assertIn('<summary><span class="import-guide-title">New here?', html)
+            self.assertIn('animation:import-guide-shimmer 2.5s ease-in-out .6s 2 forwards,import-guide-glow 2.5s ease-in-out .6s 2 forwards', html)
+            self.assertIn('@keyframes import-guide-shimmer', html)
+            self.assertIn('@keyframes import-guide-glow', html)
+            self.assertIn('@keyframes import-guide-border', html)
+            self.assertIn('@media(prefers-reduced-motion:reduce)', html)
+            self.assertIn('.import-guide,.import-guide-title{animation:none}', html)
+            self.assertIn('.import-guide-title{background:none;-webkit-text-fill-color:currentColor}', html)
+
     def test_built_index_matches_current_sources(self):
         # Prevent a future source edit from silently undoing the previewed HTML.
         self.assertEqual(self.html, self.template.replace(
