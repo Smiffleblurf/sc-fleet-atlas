@@ -64,6 +64,11 @@ assert.ok(svg.includes('opacity="0.13"'),'Unowned craft need a clear visual fade
 assert.ok(svg.includes('class="module-outline"'),'Module roles need a visible frame around the silhouette');
 assert.ok(svg.includes('stroke="#c9b5ff" stroke-opacity="1" stroke-width="2.8"'),'Available modules need a solid violet frame');
 assert.ok(svg.includes('stroke="#f1bf76" stroke-opacity="1" stroke-width="2.8" stroke-dasharray="5 3"'),'Planned modules need a dashed amber frame');
+const withUnownedModularShip=build(example,true,[...refs,
+  make('Synthetic Unowned Modular Hull','multi','generalist',[],[{role:'medical',status:'available'},{role:'refining',status:'planned'}]),
+]).svg;
+assert.ok(withUnownedModularShip.includes('stroke="#c9b5ff" stroke-opacity=".28"'),'Unowned available modules must be subdued');
+assert.ok(withUnownedModularShip.includes('stroke="#f1bf76" stroke-opacity=".28"'),'Unowned planned modules must be subdued');
 assert.ok(svg.includes('>MODULE OPTION</text>')&&svg.includes('>PLANNED OPTION</text>'),'Legend should name both visible module states');
 assert.equal((svg.match(/M15 2 L19 12 L27 18/g)||[]).length,4,'Legend swatches should use recognizable silhouette samples for all four states');
 assert.ok(svg.includes('fill="#f6fbff" opacity=".13"'),'Unowned legend sample should have the same faded treatment as unowned hulls');

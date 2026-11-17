@@ -458,9 +458,9 @@ function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
   if(module){
    const accent=s.kind==='planned'?'#f1bf76':'#c9b5ff';
    const dash=s.kind==='planned'?'stroke-dasharray="5 3"':'';
-   // The silhouette conveys ownership; keep the module outline readable even
-   // when the unowned hull underneath is intentionally faded to 13%.
-   out(`<rect class="module-outline" x="${(x+1).toFixed(1)}" y="${(y+1).toFixed(1)}" width="29" height="29" rx="5" fill="${accent}" fill-opacity="${s.owned?'.18':'.07'}" stroke="${accent}" stroke-opacity="${s.owned?'1':'.72'}" stroke-width="2.8" ${dash}/>`);
+   // Silhouettes and module frames both convey ownership. Frames should remain
+   // identifiable on unowned hulls without competing with owned highlights.
+   out(`<rect class="module-outline" x="${(x+1).toFixed(1)}" y="${(y+1).toFixed(1)}" width="29" height="29" rx="5" fill="${accent}" fill-opacity="${s.owned?'.18':'.025'}" stroke="${accent}" stroke-opacity="${s.owned?'1':'.28'}" stroke-width="2.8" ${dash}/>`);
   }
   out('</g>');
  };
@@ -507,7 +507,7 @@ function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
   }
   out(text(x+39,bottom+67,label,15,'#bbd1df',650));
  });
- out(text(W-M,bottom+67,'Model unavailable? A small diamond indicates no verified silhouette yet.',14,'#879ead',450,'text-anchor="end"'));
+ out(text(W-M,bottom+67,'Module frames fade on unowned ships · Diamond = silhouette unavailable',14,'#879ead',450,'text-anchor="end"'));
  out(text(M,H-57,'MADE BY THE COMMUNITY · Unofficial Star Citizen fan project · Not affiliated with Cloud Imperium Games',14,'#94b1c4',650));
  out(text(M,H-29,'Star Citizen and ship designs belong to CIG/RSI · Silhouettes from available RSI Holoviewer models · Model-link index: DragonAceNL',13,'#7795a9',450));
  out(text(W-M,H-29,`${imageIds.size} distinct ship outlines in this export · no account data shared`,14,'#7795a9',480,'text-anchor="end"'));
