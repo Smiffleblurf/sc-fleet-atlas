@@ -113,6 +113,13 @@ class BuildTests(unittest.TestCase):
         sitemap = (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
         self.assertIn('<loc>' + canonical + '</loc>', sitemap)
 
+    def test_favicon_matches_site_branding(self):
+        favicon = (ROOT / 'favicon.svg').read_text(encoding='utf-8')
+        self.assertIn('<link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any">', self.html)
+        self.assertIn('viewBox="0 0 64 64"', favicon)
+        self.assertIn('#9a75fc', favicon)
+        self.assertIn('#398cbb', favicon)
+
     def test_built_index_matches_current_sources(self):
         # Prevent a future source edit from silently undoing the previewed HTML.
         self.assertEqual(self.html, self.template.replace(

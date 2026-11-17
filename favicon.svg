@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Fleet Atlas</title>
+  <defs>
+    <linearGradient id="atlas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9a75fc"/>
+      <stop offset="1" stop-color="#398cbb"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#atlas)"/>
+  <path d="M32 8 38.5 25.5 56 32 38.5 38.5 32 56 25.5 38.5 8 32 25.5 25.5Z" fill="#fff"/>
+</svg>
