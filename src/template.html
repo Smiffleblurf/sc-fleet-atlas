@@ -37,7 +37,7 @@ header{padding:28px max(24px,calc((100vw - 1500px)/2)) 0}main{max-width:1528px;m
 .coverage-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:15px}.panel{background:#141e36;border:1px solid var(--edge);border-radius:13px;padding:17px}.panel h3{margin:0 0 12px;font-size:16px}.panel p{color:var(--muted);font-size:12px;line-height:1.6}.gaplist{width:100%;border-collapse:collapse}.gaplist th{text-align:left;color:#9eadd0;font-size:11px;padding:8px 6px;border-bottom:1px solid var(--edge)}.gaplist td{padding:8px 6px;border-bottom:1px solid #293451;font-size:12px}.gaplist tr:last-child td{border-bottom:0}.score{display:inline-flex;background:#282e49;border-radius:5px;padding:3px 7px;color:#dfe7ff;font-weight:850}.score.zero{background:#47372d;color:#ffd18a}
 .roster{width:100%;border-collapse:collapse;min-width:760px}.roster th{color:#b3c1df;background:#202a46;padding:11px 10px;text-align:left;font-size:11px;position:sticky;top:0}.roster td{border-bottom:1px solid #293451;padding:10px;color:#cad5eb;font-size:12px}.roster tr:hover td{background:#1b2844}.roster .ship-name{font-weight:750;color:#f1f4ff}.roster .dim{color:var(--low);font-size:11px}.roster select{max-width:100%;width:100%;font-size:12px;color:#e3eaff;border:1px solid #3a4a6c;border-radius:5px;background:#1c2945;padding:7px 4px}
 .fan-notice{margin-top:17px;padding:13px 15px;border:1px solid #5f648f;background:#1a203a;border-radius:11px;font-size:13px;line-height:1.6;color:#e1e6f5}.fan-notice a{color:#b5d9ff}.foot{padding-top:20px;color:var(--low);font-size:11px;line-height:1.7;border-top:1px solid #2b3854;margin-top:30px}.foot a{color:#a3caff}.notice{display:none;color:#89ddbb;font-weight:700;font-size:12px}.noresults{padding:30px;text-align:center;color:var(--muted)}
-.share-dialog{width:min(1100px,94vw);max-height:92vh;border:1px solid #5a6898;border-radius:15px;padding:0;background:#121a30;color:var(--text);box-shadow:0 26px 95px #0009}.share-dialog::backdrop{background:#040716df}.share-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:17px 21px;border-bottom:1px solid var(--edge)}.share-dialog-head h2{font-size:18px;margin:0 0 4px}.share-dialog-head p{color:var(--muted);font-size:12px;margin:0}.share-dialog-head .btn{padding:5px 10px}.share-preview{padding:16px;max-height:65vh;overflow:auto;background:#0b1020}.share-preview img{display:block;width:100%;height:auto;border:1px solid #38496e;border-radius:8px}.share-preview img.full-size{width:2400px;max-width:none}.share-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:13px 20px}.share-actions .share-tip{color:var(--muted);font-size:11px;margin-left:auto}
+.share-dialog{width:min(1100px,94vw);max-height:92vh;border:1px solid #5a6898;border-radius:15px;padding:0;background:#121a30;color:var(--text);box-shadow:0 26px 95px #0009}.share-dialog::backdrop{background:#040716df}.share-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:17px 21px;border-bottom:1px solid var(--edge)}.share-dialog-head h2{font-size:18px;margin:0 0 4px}.share-dialog-head p{color:var(--muted);font-size:12px;margin:0}.share-dialog-head .btn{padding:5px 10px}.share-preview{padding:16px;max-height:65vh;overflow:auto;background:#0b1020}.share-preview img{display:block;width:100%;height:auto;border:1px solid #38496e;border-radius:8px}.share-preview img.full-size{width:3840px;max-width:none}.share-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:13px 20px}.share-actions .share-tip{color:var(--muted);font-size:11px;margin-left:auto}
 @media(max-width:900px){.cardgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.coverage-layout{grid-template-columns:1fr}.hero h1{font-size:30px}.matrix th:first-child{width:196px}}@media(max-width:600px){main{padding:0 12px 40px}header{padding:17px 12px 0}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.cardgrid{grid-template-columns:1fr}.tab{padding:10px 9px;font-size:12px}.hero{padding-top:22px}.topactions{width:100%}.topactions .btn{flex:1;justify-content:center}.tabbar{gap:0}}
 </style>
 </head>
@@ -59,6 +59,7 @@ header{padding:28px max(24px,calc((100vw - 1500px)/2)) 0}main{max-width:1528px;m
 <div class="explainer" id="helpText"><strong>Reading the matrix:</strong> Each ship is placed in its <strong>primary professional role</strong> and an <strong>approximate operating-crew tier</strong> (not an official minimum crew specification). Ground vehicles are separated into their own column. Greyed-out ship names are catalog references <strong>not found in your imported fleet</strong>; turn them off with the toggle. They are not counted as owned or included in gap calculations. <strong>Secondary capabilities</strong> are built-in; <strong>module roles</strong> require a specific configuration and appear as dotted chips. Amber dotted chips indicate planned modules. A hull alone does not guarantee access to a module, so module roles do not count as confirmed coverage. These are editorial planning estimates, not official crew specifications or gameplay guarantees. New or ambiguous professions may require review.</div>
 <div id="content"></div>
 <div class="foot"><strong>Accuracy & privacy.</strong> Ship names and quantities are provided by each visitor through a HangarXPLOR-style JSON. Profession tags and crew tiers are editorial planning assignments, not official current ship specifications; component availability, concept status and gameplay systems may change. This public app starts empty and includes no individual fleet, account IDs, pledge prices or account history. Imported files remain on your device and are never transmitted. The browser requests only public ship data from the community Star Citizen Wiki API (or a secondary public reference when unavailable); no account data is included in those requests. New ships appear when the upstream source adds them and the browser can reach it. The local catalog can lag official announcements; unmatched professions are shown as Needs classification. Unknown ships need manual review. Official career framework: <a href="https://support.robertsspaceindustries.com/hc/en-us/articles/360002696273-Ships-and-Vehicles" target="_blank" rel="noopener">RSI / CIG ship careers</a>. Public vehicle data: <a href="https://api.star-citizen.wiki/" target="_blank" rel="noopener">Star Citizen Wiki API</a> (primary); <a href="https://github.com/meoiswa/rsi-ship-matrix" target="_blank" rel="noopener">RSI Ship Matrix community snapshot</a> (fallback). Community ship career reference: <a href="https://starcitizen.tools/Comm-Link:The_Shipyard_-_Careers_and_Roles" target="_blank" rel="noopener">The Shipyard: Careers & Roles</a>.</div>
+<div class="foot" style="margin-top:12px;border:0;padding-top:0"><strong>Ship silhouette artwork.</strong> Top-down thumbnails are derived from publicly available <a href="https://robertsspaceindustries.com/en/ship-matrix" target="_blank" rel="noopener noreferrer">RSI Holoviewer</a> models. Thanks to <a href="https://www.reddit.com/r/starcitizen/comments/1tmimsy/rsi_3d_model_download_links_odin_model_added/" target="_blank" rel="noopener noreferrer">DragonAceNL</a> for compiling the model-link index. Star Citizen and ship designs remain the property of CIG/RSI; the original meshes are not distributed here. Not every ship has a verified model yet. This fan site follows <a href="https://support.robertsspaceindustries.com/hc/en-us/articles/360006895793-Star-Citizen-Fankit-and-Fandom-FAQ" target="_blank" rel="noopener noreferrer">RSI fan-content guidance</a>.</div>
 </main>
 <dialog class="share-dialog" id="shareDialog" aria-labelledby="shareTitle"><div class="share-dialog-head"><div><h2 id="shareTitle">Fleet Career Map</h2><p>Preview your complete fleet by profession and operating scale before downloading.</p></div><button class="btn" id="shareClose" type="button" aria-label="Close graphic preview">Close</button></div><div class="share-preview"><img id="shareImage" alt="Fleet career map preview showing owned ships and profession coverage"></div><div class="share-actions"><button class="btn" id="shareZoom" type="button" aria-pressed="false">View 100% size</button><button class="btn primary" id="sharePng" type="button">↓ Download PNG</button><button class="btn" id="shareSvg" type="button">↓ Download SVG</button><span class="share-tip">Generated on this device. No hangar data is uploaded.</span></div></dialog>
 <script id="data" type="application/json">__EMBED_DATA__</script>
@@ -364,90 +365,7 @@ function exportCsv(){const cols=['name','manufacturer','ship_code','role','tier'
 // A shareable, self-contained SVG chart based exclusively on the imported fleet.
 // No account identifiers, pledge values, or reference-catalog-only ships enter this image.
 const svgEsc=s=>String(s??'').replace(/[\u0000-\u001f\u007f]/g,' ').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[ch]));
-function fleetMapSvg(fleet,showSecondary){
- if(!fleet.length)throw Error('Import a fleet before exporting its graphic.');
- const indexed=new Map();
- const add=(s,r,type)=>{
-  if(!roleById[r])return;
-  const tier=tierLabels[s.tier]?s.tier:'unknown',key=r+'|'+tier;
-  if(!indexed.has(key))indexed.set(key,{p:0,s:0,m:0,pl:0,names:new Set()});
-  const cell=indexed.get(key);cell[type]++;cell.names.add(s.name);
- };
- for(const s of fleet){
-  add(s,s.role,'p');
-  if(!showSecondary)continue;
-  for(const r of s.secondary||[])if(r!==s.role)add(s,r,'s');
-  for(const m of s.moduleRoles||[])if(m.role!==s.role&&!(s.secondary||[]).includes(m.role))add(s,m.role,m.status==='planned'?'pl':'m');
- }
- const sourceLanes=[...lanes];
- if(fleet.some(s=>s.role==='review'))sourceLanes.push({id:'REVIEW',label:'Needs Review',roles:[roleById.review]});
- const columns=[sourceLanes.slice(0,4),sourceLanes.slice(4)];
- const W=2400,M=60,GAP=32,CW=(W-2*M-GAP)/2,TOP=270,ROW=55,LANE_HEAD=34,LANE_GAP=13,PANEL_HEAD=49,ROLE_W=260,CELL_W=(CW-ROLE_W-20)/tiers.length;
- const columnHeight=groups=>PANEL_HEAD+groups.reduce((n,l)=>n+LANE_HEAD+l.roles.length*ROW+LANE_GAP,0)+14;
- const H=TOP+Math.max(...columns.map(columnHeight))+125;
- const confirmedRoles=roleList.filter(r=>r.id!=='review'&&fleet.some(s=>s.role===r.id||(showSecondary&&(s.secondary||[]).includes(r.id)))).length;
- const variants=new Set(fleet.map(s=>s.ship_code||s.name)).size;
- const possibleModules=[...indexed.values()].reduce((n,c)=>n+c.m+c.pl,0);
- const nodes=[];const out=s=>nodes.push(s);
- const text=(x,y,value,size=14,color='#eaf0ff',weight=500,extra='')=>`<text x="${x}" y="${y}" font-size="${size}" font-weight="${weight}" fill="${color}" ${extra}>${svgEsc(value)}</text>`;
- const cut=(s,max)=>String(s).length>max?String(s).slice(0,max-1)+'…':String(s);
- out(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" font-family="Inter,Segoe UI,Arial,sans-serif" role="img" aria-label="Star Citizen fleet profession and crew-tier map"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#151b3d"/><stop offset="0.58" stop-color="#0d172d"/><stop offset="1" stop-color="#101c34"/></linearGradient><radialGradient id="glow"><stop stop-color="#6552c9" stop-opacity=".35"/><stop offset="1" stop-color="#6552c9" stop-opacity="0"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#bg)"/><ellipse cx="480" cy="-100" rx="840" ry="510" fill="url(#glow)"/><ellipse cx="2140" cy="440" rx="670" ry="640" fill="url(#glow)" opacity=".45"/>`);
- out(`<rect x="${M}" y="49" width="6" height="74" rx="3" fill="#a88cff"/>`);
- out(text(M+24,76,'FLEET ATLAS  /  STAR CITIZEN',20,'#9dc9ff',800,'letter-spacing="3"'));
- out(text(M+24,123,'YOUR FLEET, BY PURPOSE.',44,'#f0f3ff',850,'letter-spacing="1"'));
- out(text(W-M,86,'PERSONAL CAREER MAP',18,'#92a6ce',700,`text-anchor="end" letter-spacing="2"`));
- out(text(W-M,118,'Unofficial fan-created planning graphic',16,'#879abb',400,`text-anchor="end"`));
- const stats=[['FLEET ASSETS',fleet.length],['DISTINCT MODELS',variants],['CONFIRMED PROFESSIONS',confirmedRoles+' / '+roleList.filter(r=>r.id!=='review').length],['MODULE POSSIBILITIES',showSecondary?possibleModules:'Hidden']];
- const statW=(W-2*M-3*GAP)/4;
- stats.forEach(([label,value],i)=>{const x=M+i*(statW+GAP);out(`<rect x="${x}" y="158" width="${statW}" height="89" rx="13" fill="#1d2948" stroke="#3d507b"/>`);out(text(x+22,183,label,14,'#a7b8d6',700,'letter-spacing="1.8"'));out(text(x+22,228,value,34,i===2?'#9fe0ff':'#e9edff',850));});
- const tierHeaders=['SOLO','PAIR','3–4','5–8','9+','GROUND','OTHER'];
- columns.forEach((groups,col)=>{
-  const x=M+col*(CW+GAP),bottom=columnHeight(groups);
-  out(`<rect x="${x}" y="${TOP}" width="${CW}" height="${bottom}" rx="15" fill="#121d34" stroke="#35476c"/>`);
-  out(text(x+18,TOP+30,'PROFESSION',15,'#bcd1f3',800,'letter-spacing="1"'));
-  tierHeaders.forEach((label,i)=>out(text(x+ROLE_W+12+CELL_W*(i+.5),TOP+30,label,12,'#bcd1f3',800,'text-anchor="middle"')));
-  let y=TOP+PANEL_HEAD;
-  groups.forEach(lane=>{
-   const accent=colors[lane.id]||'#b7a1ec';
-   out(`<rect x="${x+8}" y="${y}" width="${CW-16}" height="${LANE_HEAD}" rx="7" fill="${accent}" fill-opacity=".11"/><rect x="${x+9}" y="${y+7}" width="4" height="20" rx="2" fill="${accent}"/>`);
-   out(text(x+23,y+23,lane.label.toUpperCase(),15,accent,800,'letter-spacing=".7"'));
-   y+=LANE_HEAD;
-   lane.roles.forEach((role,ri)=>{
-    out(`<rect x="${x+8}" y="${y}" width="${CW-16}" height="${ROW-1}" rx="5" fill="${ri%2?'#121d35':'#15223b'}"/>`);
-    out(text(x+18,y+30,cut(role.label,31),14,'#e2e9fa',580));
-    tiers.forEach(([tier],ti)=>{
-     const c=indexed.get(role.id+'|'+tier),cx=x+ROLE_W+10+ti*CELL_W,cy=y+4,w=CELL_W-3;
-     if(!c){out(`<rect x="${cx}" y="${cy}" width="${w}" height="${ROW-8}" rx="5" fill="#0c162a"/>`);return;}
-     const primary=c.p>0,builtIn=c.s>0,available=c.m>0,planned=c.pl>0;
-     const ink=primary?'#f4f4ff':builtIn?'#c2f3ff':available?'#dacbff':'#ffdfa3';
-     const fill=primary?accent:builtIn?'#64cde5':available?'#a98dff':'#efb86d';
-     const dash=primary?'':builtIn?'stroke-dasharray="7 3"':'stroke-dasharray="2 3"';
-     out(`<rect x="${cx}" y="${cy}" width="${w}" height="${ROW-8}" rx="6" fill="${fill}" fill-opacity="${primary?'.33':'.15'}" stroke="${fill}" stroke-opacity=".8" ${dash}/>`);
-     const counts=[c.p&&'P'+c.p,c.s&&'S'+c.s,c.m&&'M'+c.m,c.pl&&'PL'+c.pl].filter(Boolean).join(' ');
-     out(text(cx+7,cy+17,counts,counts.length>13?10:12,ink,850));
-     const names=[...c.names].sort((a,b)=>a.localeCompare(b));
-     let nameLines;
-     if(names.length===1){
-      const name=names[0],splitAt=name.lastIndexOf(' ',16);
-      nameLines=name.length<=17?[name]:splitAt>=6?[name.slice(0,splitAt),cut(name.slice(splitAt+1),17)]:[name.slice(0,16),cut(name.slice(16),17)];
-     }else if(names.length===2)nameLines=names.map(n=>cut(n,18));
-     else nameLines=[cut(names[0],18),`${names.length-1} other models`];
-     nameLines.forEach((line,i)=>out(text(cx+7,cy+30+i*13,line,10.5,'#d3deef',500)));
-    });
-    y+=ROW;
-   });
-   y+=LANE_GAP;
-  });
- });
- const bottom=H-91;
- out(`<line x1="${M}" y1="${bottom-21}" x2="${W-M}" y2="${bottom-21}" stroke="#35476c"/>`);
- const keys=[['#ac92ff','P  Primary'],['#64cde5','S  Built-in secondary'],['#a98dff','M  Available module option'],['#efb86d','PL  Planned module']];
- keys.forEach(([color,label],i)=>{const x=M+i*530;out(`<rect x="${x}" y="${bottom}" width="16" height="16" rx="4" fill="${color}"/>`);out(text(x+27,bottom+14,label,15,'#d5def0',650));});
- out(text(M,H-27,'Only imported ships are shown. Counts are assets; "other models" means additional distinct ships. Modules do not count as confirmed.',15,'#8fa2c3'));
- out(text(W-M,H-27,'FLEET ATLAS · UNOFFICIAL',14,'#a7b8d6',750,'text-anchor="end" letter-spacing="1"'));
- out('</svg>');
- return {svg:nodes.join(''),width:W,height:H};
-}
+__FLEET_SHARE_JS__
 let shareGraphic=null,shareObjectUrl=null;
 function openFleetGraphic(){
  if(!ships.length)return;

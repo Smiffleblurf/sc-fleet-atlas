@@ -1,0 +1,64 @@
+name: Check Holoviewer ship silhouettes
+
+on:
+  schedule:
+    # New ship announcements and new Holoviewer assets are checked weekly.
+    - cron: '25 10 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh-silhouettes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install rendering dependencies
+        run: python -m pip install --disable-pip-version-check numpy pillow openctm
+      - name: Check official ship names and model availability
+        run: |
+          python scripts/update_holoviewer.py --check > /tmp/fleet-atlas-holoviewer-check.txt
+          {
+            echo '## Official RSI ship-model check'
+            echo 'The model-link index is checked against the public RSI ship matrix.'
+            echo 'Ships missing from the known model index need URL discovery; a newly announced ship does not automatically imply a Holoviewer file exists.'
+            echo '```json'
+            head -c 12000 /tmp/fleet-atlas-holoviewer-check.txt
+            echo
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Render newly indexed models
+        run: python scripts/update_holoviewer.py --generate --limit 12 --workers 2
+      - name: Rebuild standalone site
+        run: python scripts/build.py
+      - name: Test
+        run: |
+          python -m unittest discover -s tests -v
+          node tests/test_export_map.cjs
+      - name: Open a review pull request if artwork changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain -- assets/ship-silhouettes.json index.html)" ]; then
+            echo 'Silhouette artwork is up to date.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B automation/holoviewer-silhouettes
+          git add assets/ship-silhouettes.json index.html
+          git commit -m 'Refresh publicly available RSI Holoviewer silhouettes'
+          git push --force-with-lease origin automation/holoviewer-silhouettes
+          if [ "$(gh pr list --head automation/holoviewer-silhouettes --base main --json number --jq 'length')" = '0' ]; then
+            gh pr create --base main --head automation/holoviewer-silhouettes \
+              --title 'Review new Holoviewer ship silhouettes' \
+              --body 'Automated weekly silhouette update. Derived PNG thumbnails come from known, publicly accessible official RSI Holoviewer model URLs. The raw 3D files are not committed. Please inspect new ship outlines, attribution, and the RSI fan-content rules before merging. New ship names without indexed model URLs are listed in the Actions summary for manual follow-up.'
+          fi
