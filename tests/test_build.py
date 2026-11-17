@@ -155,7 +155,7 @@ class BuildTests(unittest.TestCase):
             self.assertIn('function downloadFleetSvg()', html)
             self.assertIn('canvas.toBlob(resolve,\'image/png\')', html)
             self.assertIn('Only imported ships are shown', html)
-            self.assertIn('Module possibilities do not count', html)
+            self.assertIn('Modules do not count as confirmed', html)
             self.assertIn('el(\'shareMap\').disabled=!ships.length', html)
             self.assertIn('el(\'shareDialog\').showModal()', html)
 

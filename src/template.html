@@ -382,7 +382,7 @@ function fleetMapSvg(fleet,showSecondary){
  const sourceLanes=[...lanes];
  if(fleet.some(s=>s.role==='review'))sourceLanes.push({id:'REVIEW',label:'Needs Review',roles:[roleById.review]});
  const columns=[sourceLanes.slice(0,4),sourceLanes.slice(4)];
- const W=2400,M=60,GAP=32,CW=(W-2*M-GAP)/2,TOP=270,ROW=49,LANE_HEAD=34,LANE_GAP=13,PANEL_HEAD=49,ROLE_W=260,CELL_W=(CW-ROLE_W-20)/tiers.length;
+ const W=2400,M=60,GAP=32,CW=(W-2*M-GAP)/2,TOP=270,ROW=55,LANE_HEAD=34,LANE_GAP=13,PANEL_HEAD=49,ROLE_W=260,CELL_W=(CW-ROLE_W-20)/tiers.length;
  const columnHeight=groups=>PANEL_HEAD+groups.reduce((n,l)=>n+LANE_HEAD+l.roles.length*ROW+LANE_GAP,0)+14;
  const H=TOP+Math.max(...columns.map(columnHeight))+125;
  const confirmedRoles=roleList.filter(r=>r.id!=='review'&&fleet.some(s=>s.role===r.id||(showSecondary&&(s.secondary||[]).includes(r.id)))).length;
@@ -425,8 +425,14 @@ function fleetMapSvg(fleet,showSecondary){
      out(`<rect x="${cx}" y="${cy}" width="${w}" height="${ROW-8}" rx="6" fill="${fill}" fill-opacity="${primary?'.33':'.15'}" stroke="${fill}" stroke-opacity=".8" ${dash}/>`);
      const counts=[c.p&&'P'+c.p,c.s&&'S'+c.s,c.m&&'M'+c.m,c.pl&&'PL'+c.pl].filter(Boolean).join(' ');
      out(text(cx+7,cy+17,counts,counts.length>13?10:12,ink,850));
-     const names=[...c.names];const first=names[0]||'',suffix=names.length>1?' +'+(names.length-1):'';
-     out(text(cx+7,cy+33,cut(first,Math.max(6,15-suffix.length))+suffix,10.5,'#d3deef',500));
+     const names=[...c.names].sort((a,b)=>a.localeCompare(b));
+     let nameLines;
+     if(names.length===1){
+      const name=names[0],splitAt=name.lastIndexOf(' ',16);
+      nameLines=name.length<=17?[name]:splitAt>=6?[name.slice(0,splitAt),cut(name.slice(splitAt+1),17)]:[name.slice(0,16),cut(name.slice(16),17)];
+     }else if(names.length===2)nameLines=names.map(n=>cut(n,18));
+     else nameLines=[cut(names[0],18),`${names.length-1} other models`];
+     nameLines.forEach((line,i)=>out(text(cx+7,cy+30+i*13,line,10.5,'#d3deef',500)));
     });
     y+=ROW;
    });
@@ -437,7 +443,7 @@ function fleetMapSvg(fleet,showSecondary){
  out(`<line x1="${M}" y1="${bottom-21}" x2="${W-M}" y2="${bottom-21}" stroke="#35476c"/>`);
  const keys=[['#ac92ff','P  Primary'],['#64cde5','S  Built-in secondary'],['#a98dff','M  Available module option'],['#efb86d','PL  Planned module']];
  keys.forEach(([color,label],i)=>{const x=M+i*530;out(`<rect x="${x}" y="${bottom}" width="16" height="16" rx="4" fill="${color}"/>`);out(text(x+27,bottom+14,label,15,'#d5def0',650));});
- out(text(M,H-27,'Only imported ships are shown. Module possibilities do not count toward confirmed profession coverage.',15,'#8fa2c3'));
+ out(text(M,H-27,'Only imported ships are shown. Counts are assets; "other models" means additional distinct ships. Modules do not count as confirmed.',15,'#8fa2c3'));
  out(text(W-M,H-27,'FLEET ATLAS · UNOFFICIAL',14,'#a7b8d6',750,'text-anchor="end" letter-spacing="1"'));
  out('</svg>');
  return {svg:nodes.join(''),width:W,height:H};

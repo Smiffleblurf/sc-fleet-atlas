@@ -44,6 +44,10 @@ assert.ok(height > 900 && height < 3000);
 for(const label of ['YOUR FLEET, BY PURPOSE.','Galaxy','Liberator','COMBAT &amp; SECURITY','PL1','M1','S1']){
   assert.ok(svg.includes(label), `Missing expected label: ${label}`);
 }
+assert.ok(svg.includes('Gladius'), 'Both ships sharing a cell should be named');
+assert.ok(!svg.includes('Arrow +1'), 'Ambiguous +N ship labels should not be used');
+const crowded=build([...example,make('Sabre','solo','fighter'),make('Hornet','solo','fighter')],true).svg;
+assert.ok(crowded.includes('3 other models'), 'Crowded cells should say how many distinct models are omitted');
 assert.ok(!svg.includes('PRIVATE_PLEDGE_ID_MUST_NOT_APPEAR'));
 assert.ok(!svg.includes('shiplist.json'));
 const withoutSecondary=build(example, false).svg;
