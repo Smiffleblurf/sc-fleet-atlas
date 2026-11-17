@@ -61,6 +61,11 @@ assert.ok(Number(spacing[2])-Number(spacing[1])>=2,'Ship hulls need a horizontal
 assert.ok(Number(spacing[3])-Number(spacing[1])>=2,'Ship hulls need a vertical gutter');
 assert.ok(svg.includes(`width="${spacing[1]}" height="${spacing[1]}"`),'Sprites should use the reduced icon size');
 assert.ok(svg.includes('opacity="0.13"'),'Unowned craft need a clear visual fade');
+assert.ok(!svg.includes('>OTHER</text>'),'Do not show an empty fallback crew-size column');
+const withUnclassified=build([...example,make('Experimental Test Hull','unknown','review')],true,refs).svg;
+assert.ok(withUnclassified.includes('>OTHER</text>'),'Restore Other when a ship has no recognized crew size');
+assert.ok(withUnclassified.includes('NEEDS CLASSIFICATION'),'Unclassified ships must not disappear from the export');
+assert.ok(withUnclassified.includes('Experimental Test Hull'));
 assert.ok(svg.includes('Gladius'),'Hover information must identify silhouettes');
 assert.ok(!svg.includes('other models'),'No truncated +N blocks');
 assert.ok(!svg.includes('PRIVATE_PLEDGE_ID_MUST_NOT_APPEAR'));

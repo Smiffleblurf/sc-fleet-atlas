@@ -4,9 +4,7 @@
 function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
  if(!fleet.length)throw Error('Import a fleet before exporting its graphic.');
  const W=3840,M=55,GAP=24,PW=(W-2*M-2*GAP)/3;
- const ROLE_W=232,INNER=16,TIER_IDS=['solo','duo','small','multi','fleet','ground','unknown'];
- const TIER_HEADS=['SOLO','PAIR','3–4','5–8','9+','GROUND','OTHER'];
- const CELL_W=(PW-ROLE_W-INNER*2)/TIER_IDS.length;
+ const ROLE_W=232,INNER=16;
  // Sprite artwork stays smaller than its layout pitch. The transparent edge
  // around each icon leaves a visible gutter between adjacent ship hulls.
  const ICON=31,STEP_X=33,STEP_Y=34,HEAD=148,PANEL_HEAD=56,GROUP_HEAD=37,ROW_MIN=54;
@@ -28,6 +26,14 @@ function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
   publicByKey.set(k,{...(original||{}),...s,name:original?.name||s.officialName||s.name,owned:true,count:1});
  }
  const all=[...publicByKey.values()].sort((a,b)=>a.name.localeCompare(b.name));
+ // An empty catch-all column adds no information. Show it only when an
+ // imported ship or public reference has no recognized operating scale.
+ const BASE_TIERS=['solo','duo','small','multi','fleet','ground'];
+ const needsOther=all.some(s=>!BASE_TIERS.includes(s.tier));
+ const TIER_IDS=needsOther?[...BASE_TIERS,'unknown']:BASE_TIERS;
+ const TIER_HEADS=needsOther?['SOLO','PAIR','3–4','5–8','9+','GROUND','OTHER']:['SOLO','PAIR','3–4','5–8','9+','GROUND'];
+ const CELL_W=(PW-ROLE_W-INNER*2)/TIER_IDS.length;
+ if(all.some(s=>s.role==='review'))groups[2].push('REVIEW');
  const roleEntries=(s,r)=>{
   if(s.role===r)return 'primary';
   if(!showSecondary)return '';
@@ -36,7 +42,7 @@ function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
   return module?(module.status==='planned'?'planned':'module'):'';
  };
  const panelData=groups.map(group=>group.map(id=>{
-  const lane=lanes.find(l=>l.id===id);
+  const lane=lanes.find(l=>l.id===id)||{id:'REVIEW',label:'Needs classification',roles:[{id:'review',label:'Unclassified ships'}]};
   return {id,label:lane.label,roles:lane.roles.map(role=>{
    const cells=TIER_IDS.map(t=>all.flatMap(s=>{
     const kind=roleEntries(s,role.id);
