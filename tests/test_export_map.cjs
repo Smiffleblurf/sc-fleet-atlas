@@ -55,6 +55,11 @@ for(const label of ['FLEET CAREER MAP','Galaxy','Liberator','COMBAT &amp; SECURI
   assert.ok(svg.includes(label),'Missing expected text: '+label);
 }
 assert.ok(svg.includes('<use xlink:href="#ship-'),'Images from RSI models should be embedded');
+const spacing=/const ICON=(\d+),STEP_X=([\d.]+),STEP_Y=([\d.]+)/.exec(code);
+assert.ok(spacing,'Silhouette spacing must be explicit');
+assert.ok(Number(spacing[2])-Number(spacing[1])>=2,'Ship hulls need a horizontal gutter');
+assert.ok(Number(spacing[3])-Number(spacing[1])>=2,'Ship hulls need a vertical gutter');
+assert.ok(svg.includes(`width="${spacing[1]}" height="${spacing[1]}"`),'Sprites should use the reduced icon size');
 assert.ok(svg.includes('opacity="0.13"'),'Unowned craft need a clear visual fade');
 assert.ok(svg.includes('Gladius'),'Hover information must identify silhouettes');
 assert.ok(!svg.includes('other models'),'No truncated +N blocks');
