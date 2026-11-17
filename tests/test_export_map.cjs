@@ -61,6 +61,10 @@ assert.ok(Number(spacing[2])-Number(spacing[1])>=2,'Ship hulls need a horizontal
 assert.ok(Number(spacing[3])-Number(spacing[1])>=2,'Ship hulls need a vertical gutter');
 assert.ok(svg.includes(`width="${spacing[1]}" height="${spacing[1]}"`),'Sprites should use the reduced icon size');
 assert.ok(svg.includes('opacity="0.13"'),'Unowned craft need a clear visual fade');
+assert.ok(svg.includes('class="module-outline"'),'Module roles need a visible frame around the silhouette');
+assert.ok(svg.includes('stroke="#c9b5ff" stroke-opacity="1" stroke-width="2.8"'),'Available modules need a solid violet frame');
+assert.ok(svg.includes('stroke="#f1bf76" stroke-opacity="1" stroke-width="2.8" stroke-dasharray="5 3"'),'Planned modules need a dashed amber frame');
+assert.ok(svg.includes('>MODULE OPTION</text>')&&svg.includes('>PLANNED OPTION</text>'),'Legend should name both visible module states');
 assert.ok(!svg.includes('>OTHER</text>'),'Do not show an empty fallback crew-size column');
 const withUnclassified=build([...example,make('Experimental Test Hull','unknown','review')],true,refs).svg;
 assert.ok(withUnclassified.includes('>OTHER</text>'),'Restore Other when a ship has no recognized crew size');
@@ -73,6 +77,8 @@ assert.ok(!svg.includes('shiplist.json'));
 const primaryOnly=build(example,false,refs).svg;
 assert.ok(!primaryOnly.includes('Planned module'));
 assert.ok(!primaryOnly.includes('Module option'));
+assert.ok(!primaryOnly.includes('module-outline'),'Primary-only export must not include module frames');
+assert.ok(!primaryOnly.includes('>MODULE OPTION</text>'),'Primary-only legend must not include module entries');
 assert.throws(()=>build([],true));
 console.log('Silhouette career map: synthetic fixtures passed.');
 

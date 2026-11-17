@@ -79,15 +79,22 @@ function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
  const tile=(s,x,y)=>{
   const asset=assetForShip(s),hasImage=Boolean(srcAssets[asset]),dim=s.owned?1:0.13;
   const module=s.kind==='module'||s.kind==='planned',muted=s.kind==='secondary';
-  const opacity=(module?0.74:muted?0.83:1)*dim;
+  const opacity=(muted?0.83:1)*dim;
   const title=`${s.name}${s.count>1?' ×'+s.count:''} · ${s.owned?'In your fleet':'Not in imported fleet'} · ${s.kind==='primary'?'Primary':s.kind==='secondary'?'Secondary':s.kind==='planned'?'Planned module':'Module option'}${hasImage?'':' · Silhouette not yet available'}`;
-  out(`<g opacity="${opacity}" aria-label="${svgEsc(title)}"><title>${svgEsc(title)}</title>`);
+  out(`<g aria-label="${svgEsc(title)}"><title>${svgEsc(title)}</title><g opacity="${opacity}">`);
   if(hasImage)out(`<use xlink:href="#ship-${asset}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"/>`);
   else{
    out(`<path d="M${x+14} ${y+4} l10 14 -10 8 -10 -8 z" fill="none" stroke="#d4e3e8" stroke-width="2"/>`);
    out(text(x+14,y+20,'?',13,'#d4e3e8',700,'text-anchor="middle"'));
   }
-  if(module)out(`<path d="M${x+2} ${y+29}h25" stroke="${s.kind==='planned'?'#edb36e':'#b29dff'}" stroke-width="3" stroke-dasharray="5 3"/>`);
+  out('</g>');
+  if(module){
+   const accent=s.kind==='planned'?'#f1bf76':'#c9b5ff';
+   const dash=s.kind==='planned'?'stroke-dasharray="5 3"':'';
+   // The silhouette conveys ownership; keep the module outline readable even
+   // when the unowned hull underneath is intentionally faded to 13%.
+   out(`<rect class="module-outline" x="${(x+1).toFixed(1)}" y="${(y+1).toFixed(1)}" width="29" height="29" rx="5" fill="${accent}" fill-opacity="${s.owned?'.18':'.07'}" stroke="${accent}" stroke-opacity="${s.owned?'1':'.72'}" stroke-width="2.8" ${dash}/>`);
+  }
   out('</g>');
  };
  panelData.forEach((panel,i)=>{
@@ -122,8 +129,13 @@ function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
  });
  const bottom=H-FOOT;
  out(`<line x1="${M}" y1="${bottom+28}" x2="${W-M}" y2="${bottom+28}" stroke="#28485b" stroke-width="2"/>`);
- const keyLabels=[['#f6fbff','OWNED'],['#546c79','NOT OWNED'],['#c9b5ff','MODULE OPTION'],['#f1bf76','PLANNED OPTION']];
- keyLabels.forEach(([c,label],i)=>{const x=M+i*450;out(`<circle cx="${x+8}" cy="${bottom+62}" r="7" fill="${c}"/>`);out(text(x+26,bottom+67,label,15,'#bbd1df',650));});
+ const keyLabels=[['#f6fbff','OWNED','dot'],['#546c79','NOT OWNED','dot'],...(showSecondary?[['#c9b5ff','MODULE OPTION','solid'],['#f1bf76','PLANNED OPTION','dashed']]:[])];
+ keyLabels.forEach(([c,label,style],i)=>{
+  const x=M+i*450;
+  if(style==='dot')out(`<circle cx="${x+11}" cy="${bottom+62}" r="7" fill="${c}"/>`);
+  else out(`<rect x="${x+2}" y="${bottom+52}" width="20" height="20" rx="4" fill="${c}" fill-opacity=".25" stroke="${c}" stroke-width="2.8" ${style==='dashed'?'stroke-dasharray="5 3"':''}/>`);
+  out(text(x+32,bottom+67,label,15,'#bbd1df',650));
+ });
  out(text(W-M,bottom+67,'Model unavailable? A small diamond indicates no verified silhouette yet.',14,'#879ead',450,'text-anchor="end"'));
  out(text(M,H-57,'MADE BY THE COMMUNITY · Unofficial Star Citizen fan project · Not affiliated with Cloud Imperium Games',14,'#94b1c4',650));
  out(text(M,H-29,'Star Citizen and ship designs belong to CIG/RSI · Silhouettes from available RSI Holoviewer models · Model-link index: DragonAceNL',13,'#7795a9',450));
