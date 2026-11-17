@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_reviewed": "2026-11-01",
+  "last_reviewed": "2026-11-16",
   "note": "Unofficial, editorial profession/crew planning classifications, not live CIG specs. Community review encouraged.",
   "lanes": [
     {
@@ -520,6 +520,18 @@
       "tier": "solo",
       "secondary": []
     },
+    "Endeavor": {
+      "role": "science",
+      "tier": "multi",
+      "secondary": [],
+      "moduleRoles": [
+        {"role": "medical", "module": "Medical Bay Pod", "status": "planned"},
+        {"role": "agriculture", "module": "Biodome Pods", "status": "planned"},
+        {"role": "scout", "module": "Telescope Array", "status": "planned"},
+        {"role": "carrier", "module": "Landing Bay Pod", "status": "planned"}
+      ],
+      "note": "Concept vessel; module gameplay is not currently available."
+    },
     "Expanse": {
       "role": "refining",
       "tier": "small",
@@ -592,11 +604,13 @@
     "Galaxy": {
       "role": "generalist",
       "tier": "multi",
-      "secondary": [
-        "medical",
-        "freight",
-        "refining"
-      ]
+      "secondary": [],
+      "moduleRoles": [
+        {"role": "freight", "module": "Cargo Module", "status": "available"},
+        {"role": "medical", "module": "Med Bay Module", "status": "available"},
+        {"role": "refining", "module": "Refinery Module", "status": "planned"}
+      ],
+      "note": "Only one central module can be installed at a time; owning the hull does not imply owning a module."
     },
     "Gladiator": {
       "role": "strike",
@@ -725,6 +739,15 @@
       "secondary": [
         "security"
       ]
+    },
+    "Liberator": {
+      "role": "carrier",
+      "tier": "duo",
+      "secondary": [
+        "repair",
+        "fuel"
+      ],
+      "note": "Basic repair, refuel and rearm in internal garages in Alpha 4.10.3; expansion to exterior pads is planned. Not a dedicated repair or refueling ship."
     },
     "Lynx": {
       "role": "groundutility",
@@ -965,9 +988,15 @@
       "secondary": []
     },
     "Retaliator": {
-      "role": "strike",
+      "role": "gunship",
       "tier": "multi",
-      "secondary": []
+      "secondary": [],
+      "moduleRoles": [
+        {"role": "strike", "module": "Torpedo Modules (bow/stern)", "status": "available"},
+        {"role": "freight", "module": "Cargo Modules (bow/stern)", "status": "available"},
+        {"role": "assault", "module": "Dropship Module (bow)", "status": "planned"}
+      ],
+      "note": "Two independent module bays; torpedo and cargo configurations can be mixed."
     },
     "SRV": {
       "role": "towing",
@@ -1480,6 +1509,18 @@
       "tier": "small",
       "secondary": []
     },
+    "MISC_Endeavor": {
+      "role": "science",
+      "tier": "multi",
+      "secondary": [],
+      "moduleRoles": [
+        {"role": "medical", "module": "Medical Bay Pod", "status": "planned"},
+        {"role": "agriculture", "module": "Biodome Pods", "status": "planned"},
+        {"role": "scout", "module": "Telescope Array", "status": "planned"},
+        {"role": "carrier", "module": "Landing Bay Pod", "status": "planned"}
+      ],
+      "note": "Concept vessel; module gameplay is not currently available."
+    },
     "ANVL_F7A_Hornet_Mk_II": {
       "role": "fighter",
       "tier": "solo",
@@ -1542,11 +1583,13 @@
     "RSI_Galaxy": {
       "role": "generalist",
       "tier": "multi",
-      "secondary": [
-        "medical",
-        "freight",
-        "refining"
-      ]
+      "secondary": [],
+      "moduleRoles": [
+        {"role": "freight", "module": "Cargo Module", "status": "available"},
+        {"role": "medical", "module": "Med Bay Module", "status": "available"},
+        {"role": "refining", "module": "Refinery Module", "status": "planned"}
+      ],
+      "note": "Only one central module can be installed at a time; owning the hull does not imply owning a module."
     },
     "ANVL_Gladiator": {
       "role": "strike",
@@ -1675,6 +1718,15 @@
       "secondary": [
         "security"
       ]
+    },
+    "ANVL_Liberator": {
+      "role": "carrier",
+      "tier": "duo",
+      "secondary": [
+        "repair",
+        "fuel"
+      ],
+      "note": "Basic repair, refuel and rearm in internal garages in Alpha 4.10.3; expansion to exterior pads is planned. Not a dedicated repair or refueling ship."
     },
     "RSI_Lynx": {
       "role": "groundutility",
@@ -1908,9 +1960,15 @@
       "secondary": []
     },
     "AEGS_Retaliator": {
-      "role": "strike",
+      "role": "gunship",
       "tier": "multi",
-      "secondary": []
+      "secondary": [],
+      "moduleRoles": [
+        {"role": "strike", "module": "Torpedo Modules (bow/stern)", "status": "available"},
+        {"role": "freight", "module": "Cargo Modules (bow/stern)", "status": "available"},
+        {"role": "assault", "module": "Dropship Module (bow)", "status": "planned"}
+      ],
+      "note": "Two independent module bays; torpedo and cargo configurations can be mixed."
     },
     "ARGO_SRV": {
       "role": "towing",

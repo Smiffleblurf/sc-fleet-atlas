@@ -76,6 +76,28 @@ class BuildTests(unittest.TestCase):
         self.assertEqual([lane['id'] for lane in self.bundle['lanes']],
                          [lane['id'] for lane in self.catalog['lanes']])
 
+    def test_module_roles_are_distinct_from_inherent_secondary_capabilities(self):
+        rules = self.bundle['rulebook']
+        self.assertEqual(rules['Liberator']['role'], 'carrier')
+        self.assertEqual(set(rules['Liberator']['secondary']), {'repair', 'fuel'})
+        self.assertIn('rearm', rules['Liberator']['note'])
+        self.assertEqual(rules['Galaxy']['secondary'], [])
+        self.assertEqual({r['role']: r['status'] for r in rules['Galaxy']['moduleRoles']},
+                         {'freight': 'available', 'medical': 'available', 'refining': 'planned'})
+        self.assertEqual(rules['Retaliator']['role'], 'gunship')
+        self.assertEqual({r['role']: r['status'] for r in rules['Retaliator']['moduleRoles']},
+                         {'strike': 'available', 'freight': 'available', 'assault': 'planned'})
+        self.assertTrue(all(m['status'] == 'planned' for m in rules['Endeavor']['moduleRoles']))
+        for name, code in (('Liberator', 'ANVL_Liberator'), ('Galaxy', 'RSI_Galaxy'),
+                           ('Retaliator', 'AEGS_Retaliator'), ('Endeavor', 'MISC_Endeavor')):
+            self.assertEqual(self.bundle['rulebook'][name], self.bundle['codeRules'][code])
+        self.assertIn('id="includeSecondary" checked', self.html)
+        self.assertIn('SECONDARY_PREF_KEY', self.html)
+        self.assertIn('moduleRoleFor=(s,r)', self.html)
+        self.assertIn('const confirmed=relevant.filter(s=>hasRole(s,r.id,f.secondary))', self.html)
+        self.assertIn('const conditional=relevant.filter(s=>!hasRole(s,r.id,f.secondary))', self.html)
+        self.assertIn('module-dependent possibilities are shown in the matrix but excluded', self.html)
+
     def test_search_discovery_metadata(self):
         # Public-facing SEO metadata is present in generated and source HTML.
         canonical = 'https://smiffleblurf.github.io/sc-fleet-atlas/'

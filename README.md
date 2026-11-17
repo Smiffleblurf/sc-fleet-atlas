@@ -12,7 +12,8 @@ We hope by starting this project it will encourage better profession mapping too
 ## Features
 
 - Import HangarXPLOR-style `shiplist.json` (JSON array) or an exported Fleet Atlas mapped JSON (`{ "ships": [...] }`).
-- Explore profession lanes, secondary capabilities, crew-scale matrix, fleet roster, and generalized coverage observations.
+- Explore profession lanes, built-in secondary capabilities, configurable module roles, crew-scale matrix, fleet roster, and generalized coverage observations.
+- **Include secondary & module roles** is enabled by default and remembers your choice on that device (only this UI preference is stored, never your fleet). Built-in secondary capabilities count as coverage; optional module configurations appear as dotted chips and are **not counted as confirmed owned coverage**. Planned modules are distinctly marked.
 - **Show ships not in my fleet** is enabled by default: unowned catalog ships appear greyed out but do not influence counts or gaps. Turn it off for an owned-only view.
 - Checks the **Star Citizen Wiki API** (ship matrix and ground vehicles) for new public entries on launch, with a local 12-hour public-data cache and a Check ship updates button. The status shows the time of each successful check in the visitor’s local time zone, including seconds; offline failures are distinguished from successful refreshes. Falls back to bundled public catalog entries; a secondary public community snapshot is available if the Wiki API is blocked.
 - Edit primary role and planning tier in the fleet roster, then export your mapped fleet as JSON or CSV.
@@ -20,6 +21,17 @@ We hope by starting this project it will encourage better profession mapping too
 - Ships with no confident mapping appear as **Needs classification**. Public data can automatically refresh from the Star Citizen Wiki API as that community source updates; the editorial profession taxonomy is not automatically maintained, and upstream/API/CORS outages may temporarily prevent a live check.
 
 **Important:** All ship role assignments and crew tiers are unofficial editorial planning estimates, not current game statistics or gameplay guarantees. Empty lanes are information—not recommendations to spend money.
+
+### Modular ships and current gameplay
+
+The editorial catalog distinguishes always-available secondary functions from roles requiring a specific interchangeable module. Ownership of a ship hull alone does not establish which module is installed or owned. For example:
+
+- **RSI Galaxy:** Cargo and Med Bay modules are available in Alpha 4.10.3; the Refinery module is planned. These are mutually exclusive central-bay configurations.
+- **Aegis Retaliator:** Torpedo and Cargo modules are available for its two bays; Dropship is a planned module. The ship may mix cargo and torpedo modules. Its unmodified hull is classified as a gunship for the profession map.
+- **MISC Endeavor:** Research-oriented primary role with planned pod configurations for medical, agriculture, scouting, and landing support. The ship is still a concept; these are not playable modules.
+- **Anvil Liberator:** Carrier with limited built-in repair, refuel and rearm support. In Alpha 4.10.3 the services work in its internal garages; expansion to exterior pads is planned. This is not the equivalent of a dedicated refueling or repair ship.
+
+For background, see the [Galaxy specifications](https://robertsspaceindustries.com/en/comm-link/transmission/21346-RSI-Galaxy), [Retaliator module introduction](https://robertsspaceindustries.com/en/comm-link/transmission/19933-Aegis-Retaliator), [Endeavor concept](https://robertsspaceindustries.com/en/comm-link/transmission/14972-Research-Unbound-The-MISC-Endeavor), and [Liberator introduction](https://robertsspaceindustries.com/en/comm-link/transmission/21348-Anvil-Liberator). These classifications should be revisited as CIG changes gameplay or launches modules.
 
 ## Try it
 
@@ -35,7 +47,7 @@ An optional `.github/workflows/pages.yml` is included in the release package for
 
 ## Contribute a new ship or change a role
 
-Edit `catalog/ship-roles.json`. `rulebook` keys are ship display names and `codeRules` keys are HangarXPLOR `ship_code` values. To add support for a new ship, add a `role`, `tier`, and `secondary` list. Please explain role/crew evidence in your pull request. Run `python scripts/build.py` to update the single-file release locally. The current branch-based Pages setup serves the checked-in `index.html` on merging to `main`.
+Edit `catalog/ship-roles.json`. `rulebook` keys are ship display names and `codeRules` keys are HangarXPLOR `ship_code` values. To add support for a new ship, add a `role`, `tier`, and `secondary` list. For conditional configurations, use `moduleRoles` entries with `role`, `module` name, and `status` (`available` or `planned`). A plain `secondary` capability means the hull has that function without swapping modules. Please explain role/crew and module evidence in your pull request. Run `python scripts/build.py` to update the single-file release locally. The current branch-based Pages setup serves the checked-in `index.html` on merging to `main`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [the publishing checklist](PUBLISHING.md).
 
