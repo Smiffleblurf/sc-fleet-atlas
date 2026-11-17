@@ -136,10 +136,13 @@ class BuildTests(unittest.TestCase):
     def test_import_guide_shimmer_finishes_and_respects_reduced_motion(self):
         for html in (self.template, self.html):
             self.assertIn('<summary><span class="import-guide-title">New here?', html)
-            self.assertIn('animation:import-guide-shimmer 2.5s ease-in-out .6s 2 forwards', html)
+            self.assertIn('animation:import-guide-shimmer 2.5s ease-in-out .6s 2 forwards,import-guide-glow 2.5s ease-in-out .6s 2 forwards', html)
             self.assertIn('@keyframes import-guide-shimmer', html)
+            self.assertIn('@keyframes import-guide-glow', html)
+            self.assertIn('@keyframes import-guide-border', html)
             self.assertIn('@media(prefers-reduced-motion:reduce)', html)
-            self.assertIn('.import-guide-title{animation:none;background:none;-webkit-text-fill-color:currentColor}', html)
+            self.assertIn('.import-guide,.import-guide-title{animation:none}', html)
+            self.assertIn('.import-guide-title{background:none;-webkit-text-fill-color:currentColor}', html)
 
     def test_built_index_matches_current_sources(self):
         # Prevent a future source edit from silently undoing the previewed HTML.
