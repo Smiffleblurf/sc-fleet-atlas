@@ -37,6 +37,14 @@ For background, see the [Galaxy specifications](https://robertsspaceindustries.c
 
 Open `index.html` in a modern browser, or use GitHub Pages. Click **Import fleet JSON** and choose your local `shiplist.json`. No hangar file is sent to a server. Online reference refreshes depend on browser cross-origin permissions (CORS), source uptime, and network access; the bundled snapshot works offline. The primary public ship data source is [Star Citizen Wiki API](https://docs.star-citizen.wiki/) (community-maintained, **not** an official CIG API). The bundled offline reference and optional secondary live fallback are based on public ship names and roles from the community-maintained [RSI Ship Matrix project](https://github.com/meoiswa/rsi-ship-matrix), which draws on FleetYards data. These secondary entries may be older or classified differently from the Wiki.
 
+### Share a fleet career graphic
+
+After importing a fleet, choose **Fleet graphic** to preview a two-column profession-by-crew-tier map. Download a high-resolution **PNG** for Discord or an **SVG** for lossless resizing. The graphic summarizes the complete imported fleet rather than the current search or lane filter and includes ship names and quantities, but no RSI account IDs, pledge history, or prices. All drawing and image conversion happen in your browser; nothing is uploaded.
+
+Solid cells mark primary roles, dashed cells represent built-in secondary roles, and dotted cells represent optional module configurations, including amber markings for planned modules. Modules are *not* included in the confirmed profession count. The **Include secondary & module roles** checkbox also controls whether the graphic shows those additional possibilities. Unowned reference-catalog ships are never included in a shared graphic.
+
+For a synthetic visual test, run `node tests/test_export_map.cjs`. The image export runs without Node or third-party libraries in visitors' browsers.
+
 ### Get your hangar JSON
 
 1. Install [HangarXPLOR](https://hangarxplor.space/) from the [Chrome Web Store](https://chromewebstore.google.com/detail/hangarxplor/bhkgemjdepodofcnmekdobmmbifemhkc/), [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/star-citizen-hangar-xplorer/), or [Opera Add-ons](https://addons.opera.com/en/extensions/details/star-citizen-hangar-xplorer/).

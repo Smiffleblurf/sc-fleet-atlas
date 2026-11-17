@@ -144,6 +144,21 @@ class BuildTests(unittest.TestCase):
             self.assertIn('.import-guide,.import-guide-title{animation:none}', html)
             self.assertIn('.import-guide-title{background:none;-webkit-text-fill-color:currentColor}', html)
 
+    def test_shareable_fleet_graphic_has_local_preview_and_safe_exports(self):
+        for html in (self.template, self.html):
+            self.assertIn('id="shareMap"', html)
+            self.assertIn('id="shareDialog"', html)
+            self.assertIn('id="shareImage"', html)
+            self.assertIn('id="shareZoom"', html)
+            self.assertIn('function fleetMapSvg(fleet,showSecondary)', html)
+            self.assertIn('function downloadFleetPng()', html)
+            self.assertIn('function downloadFleetSvg()', html)
+            self.assertIn('canvas.toBlob(resolve,\'image/png\')', html)
+            self.assertIn('Only imported ships are shown', html)
+            self.assertIn('Module possibilities do not count', html)
+            self.assertIn('el(\'shareMap\').disabled=!ships.length', html)
+            self.assertIn('el(\'shareDialog\').showModal()', html)
+
     def test_built_index_matches_current_sources(self):
         # Prevent a future source edit from silently undoing the previewed HTML.
         self.assertEqual(self.html, self.template.replace(
