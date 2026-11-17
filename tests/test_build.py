@@ -97,6 +97,8 @@ class BuildTests(unittest.TestCase):
         self.assertIn('const confirmed=relevant.filter(s=>hasRole(s,r.id,f.secondary))', self.html)
         self.assertIn('const conditional=relevant.filter(s=>!hasRole(s,r.id,f.secondary))', self.html)
         self.assertIn('module-dependent possibilities are shown in the matrix but excluded', self.html)
+        self.assertIn('.shipchip.module.planned.not-owned', self.template)
+        self.assertIn('.shipchip.module.not-owned:hover', self.template)
 
     def test_search_discovery_metadata(self):
         # Public-facing SEO metadata is present in generated and source HTML.
