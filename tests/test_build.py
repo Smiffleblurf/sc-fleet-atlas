@@ -3,11 +3,13 @@
 Never include a real hangar export or private fleet identifiers in fixtures.
 """
 import json
+import hashlib
 import pathlib
 import re
 import subprocess
 import sys
 import unittest
+from urllib.parse import urlparse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -144,13 +146,50 @@ class BuildTests(unittest.TestCase):
             self.assertIn('.import-guide,.import-guide-title{animation:none}', html)
             self.assertIn('.import-guide-title{background:none;-webkit-text-fill-color:currentColor}', html)
 
+    def test_shareable_fleet_graphic_has_local_preview_and_safe_exports(self):
+        for html in (self.template, self.html):
+            self.assertIn('id="shareMap"', html)
+            self.assertIn('id="shareDialog"', html)
+            self.assertIn('id="shareImage"', html)
+            self.assertIn('id="shareZoom"', html)
+            self.assertIn('function downloadFleetPng()', html)
+            self.assertIn('function downloadFleetSvg()', html)
+            self.assertIn('canvas.toBlob(resolve,\'image/png\')', html)
+            self.assertIn('el(\'shareMap\').disabled=!ships.length', html)
+            self.assertIn('el(\'shareDialog\').showModal()', html)
+        self.assertIn('__FLEET_SHARE_JS__', self.template)
+        self.assertIn('function fleetMapSvg(fleet,showSecondary', self.html)
+        self.assertIn('BRIGHT  =  OWNED', self.html)
+        self.assertIn('silhouetteAssets', self.html)
+        self.assertIn('silhouetteNames', self.html)
+        self.assertGreaterEqual(len(self.bundle['silhouetteNames']), 1)
+        self.assertLessEqual(len(self.bundle['silhouetteAssets']), 243)
+
+    def test_silhouette_assets_use_official_holoviewer_links(self):
+        model_index = json.loads((ROOT / 'catalog' / 'holoviewer-models.json').read_text())
+        self.assertGreaterEqual(len(model_index['models']), 200)
+        known_ids = set()
+        for model in model_index['models']:
+            url = urlparse(model['url'])
+            self.assertEqual(url.scheme, 'https')
+            self.assertIn(url.hostname, ('robertsspaceindustries.com',
+                                         'media.robertsspaceindustries.com'))
+            self.assertTrue(url.path.endswith('.ctm'))
+            known_ids.add(hashlib.sha256(model['url'].encode()).hexdigest()[:20])
+        self.assertGreaterEqual(len(self.bundle['silhouetteAssets']), 180)
+        self.assertTrue(set(self.bundle['silhouetteAssets']).issubset(known_ids))
+        self.assertIn('DragonAceNL', self.html)
+        self.assertIn('MADE BY THE COMMUNITY', self.html)
+        self.assertFalse(list(ROOT.rglob('*.ctm')), '3D model meshes must not be committed')
+
     def test_built_index_matches_current_sources(self):
         # Prevent a future source edit from silently undoing the previewed HTML.
         self.assertEqual(self.html, self.template.replace(
             '__EMBED_DATA__',
             json.dumps(self.bundle, ensure_ascii=False, separators=(',', ':'))
             .replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026'),
-        ))
+        ).replace('__FLEET_SHARE_JS__',
+                  (ROOT / 'src' / 'share-map.js').read_text(encoding='utf-8')))
 
 
 if __name__ == '__main__':

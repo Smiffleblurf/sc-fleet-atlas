@@ -1,0 +1,6 @@
+# Reproducible local model-rendering products and visual QA previews.
+# assets/ship-silhouettes.json is the committed asset bundle.
+assets/ship-silhouettes/
+*preview*.png
+fleet-silhouette-*.png
+__pycache__/

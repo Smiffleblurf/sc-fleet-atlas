@@ -1,0 +1,981 @@
+{
+  "schema_version": 1,
+  "source": "https://www.reddit.com/r/starcitizen/comments/1tmimsy/rsi_3d_model_download_links_odin_model_added/",
+  "source_credit": "DragonAceNL's publicly linked RSI Holoviewer model index (May 24, 2026)",
+  "last_index_reviewed": "2026-11-17",
+  "note": "URLs identify models hosted on official RSI domains; this index does not grant redistribution rights. The assets must be used only in compliance with applicable RSI fan-content terms.",
+  "models": [
+    {
+      "name": "Avenger Stalker",
+      "url": "https://robertsspaceindustries.com/media/ct7eey0jlo7yzr/source/AEGIS-Avenger.ctm"
+    },
+    {
+      "name": "Avenger Titan",
+      "url": "https://robertsspaceindustries.com/media/pr95737pl0obdr/source/AEGIS_AVENGER_TITAN.ctm"
+    },
+    {
+      "name": "Avenger Titan Renegade",
+      "url": "https://robertsspaceindustries.com/media/pr95737pl0obdr/source/AEGIS_AVENGER_TITAN.ctm"
+    },
+    {
+      "name": "Avenger Warlock",
+      "url": "https://robertsspaceindustries.com/media/a03drsgan2lp7r/source/AEGIS_AVENGER_WARLOCK.ctm"
+    },
+    {
+      "name": "Eclipse",
+      "url": "https://robertsspaceindustries.com/media/pj30vwd8f32r5r/source/AEGIS_ECLIPSE_ROTATED3.ctm"
+    },
+    {
+      "name": "Gladius",
+      "url": "https://robertsspaceindustries.com/media/oibvdxxco2narr/source/AEGIS-Gladius2.ctm"
+    },
+    {
+      "name": "Gladius Pirate Edition",
+      "url": "https://robertsspaceindustries.com/media/oibvdxxco2narr/source/AEGIS-Gladius2.ctm"
+    },
+    {
+      "name": "Gladius Valiant",
+      "url": "https://robertsspaceindustries.com/media/3hlkgpwpgsnzcr/source/AEGIS_GLADIUS_VALIANT.ctm"
+    },
+    {
+      "name": "Hammerhead",
+      "url": "https://robertsspaceindustries.com/media/6tk7y9bo869byr/source/AEGIS_HAMMERHEAD_v3.ctm"
+    },
+    {
+      "name": "Idris-M",
+      "url": "https://media.robertsspaceindustries.com/rui1ecy702hcj/source.ctm"
+    },
+    {
+      "name": "Idris-P",
+      "url": "https://media.robertsspaceindustries.com/ld5xf2238sqvb/source.ctm"
+    },
+    {
+      "name": "Javelin",
+      "url": "https://robertsspaceindustries.com/media/kvt3bfwjb1cxwr/source/AEGIS_JAVELIN.ctm"
+    },
+    {
+      "name": "Nautilus",
+      "url": "https://media.robertsspaceindustries.com/9gmwaxdtjwsnt/source.ctm"
+    },
+    {
+      "name": "Nautilus Solstice Edition",
+      "url": "https://media.robertsspaceindustries.com/9gmwaxdtjwsnt/source.ctm"
+    },
+    {
+      "name": "Reclaimer",
+      "url": "https://robertsspaceindustries.com/media/dsofjsnag9vvkr/source/AEGIS-Reclaimer.ctm"
+    },
+    {
+      "name": "Redeemer",
+      "url": "https://media.robertsspaceindustries.com/bllb5imymjgi5/source.ctm"
+    },
+    {
+      "name": "Retaliator",
+      "url": "https://robertsspaceindustries.com/media/h3h448c01rik3r/source/AEGIS-Retaliator.ctm"
+    },
+    {
+      "name": "Sabre",
+      "url": "https://robertsspaceindustries.com/media/u504isq8qo05fr/source/Citcon_concept.ctm"
+    },
+    {
+      "name": "Sabre Comet",
+      "url": "https://robertsspaceindustries.com/media/00pzvgs3qq7pnr/source/9-AEGIS-Sabre-Comet.ctm"
+    },
+    {
+      "name": "Sabre Firebird",
+      "url": "https://media.robertsspaceindustries.com/3alow35h5klq4/source.ctm"
+    },
+    {
+      "name": "Sabre Peregrine",
+      "url": "https://media.robertsspaceindustries.com/7dvlji7ppe2s4/source.ctm"
+    },
+    {
+      "name": "Sabre Raven",
+      "url": "https://robertsspaceindustries.com/media/t6ohbfjwlj9mfr/source/AEGIS_RAVEN-2.ctm"
+    },
+    {
+      "name": "Tiburon",
+      "url": "https://media.robertsspaceindustries.com/h8ltm795547gf/source.ctm"
+    },
+    {
+      "name": "Vanguard Harbinger",
+      "url": "https://media.robertsspaceindustries.com/gnuun3ggh8pe3/source.ctm"
+    },
+    {
+      "name": "Vanguard Hoplite",
+      "url": "https://robertsspaceindustries.com/media/8l566ksz0lnh5r/source/AEGIS_VANGUARD_HOPLITE.ctm"
+    },
+    {
+      "name": "Vanguard Sentinel",
+      "url": "https://media.robertsspaceindustries.com/dqv0nm058q9xx/source.ctm"
+    },
+    {
+      "name": "Vanguard Warden",
+      "url": "https://robertsspaceindustries.com/media/jgq01rt1qdc35r/source/AEGIS-Vanguard.ctm"
+    },
+    {
+      "name": "Vulcan",
+      "url": "https://robertsspaceindustries.com/media/6a5ypzjqsi3str/source/AEGIS_VULCAN.ctm"
+    },
+    {
+      "name": "Anvil Ballista Dunestalker",
+      "url": "https://media.robertsspaceindustries.com/uott2v11q7fki/source.ctm"
+    },
+    {
+      "name": "Anvil Ballista Snowblind",
+      "url": "https://media.robertsspaceindustries.com/uott2v11q7fki/source.ctm"
+    },
+    {
+      "name": "Ballista",
+      "url": "https://media.robertsspaceindustries.com/uott2v11q7fki/source.ctm"
+    },
+    {
+      "name": "Arrow",
+      "url": "https://robertsspaceindustries.com/media/tz3cozg51fyi7r/source/ANVIL_ARROW2.ctm"
+    },
+    {
+      "name": "Asgard",
+      "url": "https://media.robertsspaceindustries.com/ppf2d374vdr7c/source.ctm"
+    },
+    {
+      "name": "C8 Pisces",
+      "url": "https://media.robertsspaceindustries.com/nmjy8eno0qwfs/source.ctm"
+    },
+    {
+      "name": "C8R Pisces",
+      "url": "https://media.robertsspaceindustries.com/nmjy8eno0qwfs/source.ctm"
+    },
+    {
+      "name": "C8X Pisces Expedition",
+      "url": "https://media.robertsspaceindustries.com/i2k8f4qixapvh/source.ctm"
+    },
+    {
+      "name": "Carrack",
+      "url": "https://media.robertsspaceindustries.com/5d19z1ni409r5/source.ctm"
+    },
+    {
+      "name": "Carrack Expedition",
+      "url": "https://media.robertsspaceindustries.com/5d19z1ni409r5/source.ctm"
+    },
+    {
+      "name": "Carrack Expedition w/C8X",
+      "url": "https://media.robertsspaceindustries.com/5d19z1ni409r5/source.ctm"
+    },
+    {
+      "name": "Carrack w/C8X",
+      "url": "https://media.robertsspaceindustries.com/5d19z1ni409r5/source.ctm"
+    },
+    {
+      "name": "Centurion",
+      "url": "https://media.robertsspaceindustries.com/q61pn4wdthpvn/source.ctm"
+    },
+    {
+      "name": "Crucible",
+      "url": "https://robertsspaceindustries.com/media/4blyneqonxfqbr/source/ANVIL-Crucible.ctm"
+    },
+    {
+      "name": "F7A Hornet Mk I",
+      "url": "https://robertsspaceindustries.com/media/z8jid7tacmes7r/source/ANVIL-Hornet-F7C3.ctm"
+    },
+    {
+      "name": "F7C Hornet Mk I",
+      "url": "https://robertsspaceindustries.com/media/z8jid7tacmes7r/source/ANVIL-Hornet-F7C3.ctm"
+    },
+    {
+      "name": "F7A Hornet Mk II",
+      "url": "https://media.robertsspaceindustries.com/pf4v3rykdf0rl/source.ctm"
+    },
+    {
+      "name": "F7C Hornet Mk II",
+      "url": "https://media.robertsspaceindustries.com/yk49a70sob8nl/source.ctm"
+    },
+    {
+      "name": "F7C Hornet Wildfire Mk I",
+      "url": "https://robertsspaceindustries.com/media/gmpmvy9gd8bwur/source/ANVIL_F7C_HORNET_WILDFIRE.ctm"
+    },
+    {
+      "name": "F7C-M Super Hornet Heartseeker Mk I",
+      "url": "https://robertsspaceindustries.com/media/316nwcsk1agm2r/source/ANVIL-Hornet-F7CM.ctm"
+    },
+    {
+      "name": "F7C-M Super Hornet Mk I",
+      "url": "https://robertsspaceindustries.com/media/316nwcsk1agm2r/source/ANVIL-Hornet-F7CM.ctm"
+    },
+    {
+      "name": "F7C-M Super Hornet Mk II",
+      "url": "https://media.robertsspaceindustries.com/ccve744c0n63o/source.ctm"
+    },
+    {
+      "name": "F7C-R Hornet Tracker Mk I",
+      "url": "https://robertsspaceindustries.com/media/sokp1oqaotbudr/source/ANVIL-Hornet-F7CR2.ctm"
+    },
+    {
+      "name": "F7C-R Hornet Tracker Mk II",
+      "url": "https://media.robertsspaceindustries.com/le1xtd2whstll/source.ctm"
+    },
+    {
+      "name": "F7C-S Hornet Ghost Mk I",
+      "url": "https://robertsspaceindustries.com/media/ek9qoudwbhha1r/source/ANVIL-Hornet-F7CS2.ctm"
+    },
+    {
+      "name": "F7C-S Hornet Ghost Mk II",
+      "url": "https://media.robertsspaceindustries.com/d5mmnge4hnyjn/source.ctm"
+    },
+    {
+      "name": "F8C Lightning",
+      "url": "https://media.robertsspaceindustries.com/qo7vb25rgufzr/source.ctm"
+    },
+    {
+      "name": "F8C Lightning Executive Edition",
+      "url": "https://media.robertsspaceindustries.com/qo7vb25rgufzr/source.ctm"
+    },
+    {
+      "name": "Gladiator",
+      "url": "https://robertsspaceindustries.com/media/0z6gvbcvhpvqmr/source/ANVIL-Gladiator_LOD1.ctm"
+    },
+    {
+      "name": "Hawk",
+      "url": "https://media.robertsspaceindustries.com/tg65rr2gd0owz/source.ctm"
+    },
+    {
+      "name": "Hurricane",
+      "url": "https://robertsspaceindustries.com/media/tsoe8jbqj9n73r/source/ANVIL_HURRICANE_OBJ2.ctm"
+    },
+    {
+      "name": "Legionnaire",
+      "url": "https://media.robertsspaceindustries.com/8vspejutqmh43/source.ctm"
+    },
+    {
+      "name": "Liberator",
+      "url": "https://media.robertsspaceindustries.com/p05ngl04o8ezx/source.ctm"
+    },
+    {
+      "name": "Odin",
+      "url": "https://media.robertsspaceindustries.com/mhwmpvt2e8h0w/source.ctm"
+    },
+    {
+      "name": "Paladin",
+      "url": "https://media.robertsspaceindustries.com/0c0ww0zksw4gc/source.ctm"
+    },
+    {
+      "name": "Spartan",
+      "url": "https://media.robertsspaceindustries.com/u4dgcppvferjr/source.ctm"
+    },
+    {
+      "name": "Terrapin",
+      "url": "https://robertsspaceindustries.com/media/uoywzrnpv3ccyr/source/Terrapin_31_v2.ctm"
+    },
+    {
+      "name": "Terrapin Medic",
+      "url": "https://media.robertsspaceindustries.com/ybnxogutqokdt/source.ctm"
+    },
+    {
+      "name": "Valkyrie",
+      "url": "https://robertsspaceindustries.com/media/7n06n2u3pz8b4r/source/ANVIL_VALKYRIE2.ctm"
+    },
+    {
+      "name": "Valkyrie Liberator Edition",
+      "url": "https://robertsspaceindustries.com/media/7n06n2u3pz8b4r/source/ANVIL_VALKYRIE2.ctm"
+    },
+    {
+      "name": "Khartu-Al",
+      "url": "https://robertsspaceindustries.com/media/h23gran7882ykr/source/XIAN-Karthu-Al2.ctm"
+    },
+    {
+      "name": "Nox",
+      "url": "https://robertsspaceindustries.com/media/nwmuqf5rvz9elr/source/Xian_nox2.ctm"
+    },
+    {
+      "name": "Nox Kue",
+      "url": "https://robertsspaceindustries.com/media/nwmuqf5rvz9elr/source/Xian_nox2.ctm"
+    },
+    {
+      "name": "San'tok.yāi",
+      "url": "https://media.robertsspaceindustries.com/x363ia21xbtwy/source.ctm"
+    },
+    {
+      "name": "Argo Mole Carbon Edition",
+      "url": "https://media.robertsspaceindustries.com/h73lukwu3912e/source.ctm"
+    },
+    {
+      "name": "Argo Mole Talus Edition",
+      "url": "https://media.robertsspaceindustries.com/h73lukwu3912e/source.ctm"
+    },
+    {
+      "name": "MOLE",
+      "url": "https://media.robertsspaceindustries.com/h73lukwu3912e/source.ctm"
+    },
+    {
+      "name": "ATLS",
+      "url": "https://media.robertsspaceindustries.com/e1ob5s8fr9ahb/source.ctm"
+    },
+    {
+      "name": "ATLS GEO",
+      "url": "https://media.robertsspaceindustries.com/ho14c755erc24/source.ctm"
+    },
+    {
+      "name": "CSV-SM",
+      "url": "https://media.robertsspaceindustries.com/9elvwjdpctgyk/source.ctm"
+    },
+    {
+      "name": "MOTH",
+      "url": "https://media.robertsspaceindustries.com/0xo3ldzsn3t6t/source.ctm"
+    },
+    {
+      "name": "MPUV Cargo",
+      "url": "https://robertsspaceindustries.com/media/d0upmaztijqc1r/source/ARGO-Cargo.ctm"
+    },
+    {
+      "name": "MPUV Personnel",
+      "url": "https://robertsspaceindustries.com/media/koz4glzea88jer/source/ARGO-Personnel.ctm"
+    },
+    {
+      "name": "MPUV Tractor",
+      "url": "https://media.robertsspaceindustries.com/hq27gpdxae51s/source.ctm"
+    },
+    {
+      "name": "RAFT",
+      "url": "https://media.robertsspaceindustries.com/63n6mkbmv7vhv/source.ctm"
+    },
+    {
+      "name": "SRV",
+      "url": "https://media.robertsspaceindustries.com/s476on9y6k89x/source.ctm"
+    },
+    {
+      "name": "Defender",
+      "url": "https://media.robertsspaceindustries.com/wnckwb23w1qi4/source.ctm"
+    },
+    {
+      "name": "HoverQuad",
+      "url": "https://media.robertsspaceindustries.com/0axxxncetg92w/source.ctm"
+    },
+    {
+      "name": "Mustang Alpha",
+      "url": "https://robertsspaceindustries.com/media/tqfeltxgynglwr/source/MUSTANG_ALPHA.ctm"
+    },
+    {
+      "name": "Mustang Alpha Vindicator",
+      "url": "https://robertsspaceindustries.com/media/tqfeltxgynglwr/source/MUSTANG_ALPHA.ctm"
+    },
+    {
+      "name": "Mustang Beta",
+      "url": "https://robertsspaceindustries.com/media/ms92kv2ag2m0jr/source/MUSTANG_BETA.ctm"
+    },
+    {
+      "name": "Mustang Delta",
+      "url": "https://robertsspaceindustries.com/media/cncdl20mq6u32r/source/MUSTANG_DELTA.ctm"
+    },
+    {
+      "name": "Mustang Gamma",
+      "url": "https://robertsspaceindustries.com/media/ghitj6nm4glctr/source/MUSTANG_GAMMA2.ctm"
+    },
+    {
+      "name": "Mustang Omega",
+      "url": "https://robertsspaceindustries.com/media/301gcpt6z4zz3r/source/MUSTANG_OMEGA2.ctm"
+    },
+    {
+      "name": "Nomad",
+      "url": "https://media.robertsspaceindustries.com/slxqlrvkdld9k/source.ctm"
+    },
+    {
+      "name": "Pioneer",
+      "url": "https://robertsspaceindustries.com/media/4qayc3taiskh3r/source/CNOU_PIONEER.ctm"
+    },
+    {
+      "name": "A1 Spirit",
+      "url": "https://media.robertsspaceindustries.com/4qv02svge2ljc/source.ctm"
+    },
+    {
+      "name": "A2 Hercules",
+      "url": "https://media.robertsspaceindustries.com/5p7vdysvb5kxr/source.ctm"
+    },
+    {
+      "name": "Ares Inferno",
+      "url": "https://media.robertsspaceindustries.com/x4brx2gnrgk5a/source.ctm"
+    },
+    {
+      "name": "Ares Ion",
+      "url": "https://media.robertsspaceindustries.com/fla4fmfc0ukau/source.ctm"
+    },
+    {
+      "name": "C1 Spirit",
+      "url": "https://media.robertsspaceindustries.com/4su71rn23jaml/source.ctm"
+    },
+    {
+      "name": "C2 Hercules",
+      "url": "https://robertsspaceindustries.com/media/bzk12730mpuv8r/source/CRUSADER_HERCULES_STARLIFTER_C2.ctm"
+    },
+    {
+      "name": "E1 Spirit",
+      "url": "https://media.robertsspaceindustries.com/ox23fi4mey7kb/source.ctm"
+    },
+    {
+      "name": "Genesis",
+      "url": "https://robertsspaceindustries.com/media/w558ix98pd084r/source/Crusader-Genesis-Starliner.ctm"
+    },
+    {
+      "name": "Intrepid",
+      "url": "https://media.robertsspaceindustries.com/k3kld8ta9tes2/source.ctm"
+    },
+    {
+      "name": "M2 Hercules",
+      "url": "https://robertsspaceindustries.com/media/hf0yvi22fmlt9r/source/CRUSADER_HERCULES_STARLIFTER_M2.ctm"
+    },
+    {
+      "name": "Mercury",
+      "url": "https://robertsspaceindustries.com/media/r8rkg5ooz653ar/source/CRUSADER_MERCURY_STARRUNNER.ctm"
+    },
+    {
+      "name": "Buccaneer",
+      "url": "https://robertsspaceindustries.com/media/3ibgatzkhr8lxr/source/DRAKE_Buccaneer-1.ctm"
+    },
+    {
+      "name": "Caterpillar",
+      "url": "https://robertsspaceindustries.com/media/lcpg319apivogr/source/DRAKE-Caterpillar.ctm"
+    },
+    {
+      "name": "Clipper",
+      "url": "https://media.robertsspaceindustries.com/ehmrf2bwa8343/source.ctm"
+    },
+    {
+      "name": "Corsair",
+      "url": "https://media.robertsspaceindustries.com/84zd04oj05btt/source.ctm"
+    },
+    {
+      "name": "Cutlass Black",
+      "url": "https://robertsspaceindustries.com/media/7w8rse7wgq0bir/source/DRAKE_CUTLASSBLACK.ctm"
+    },
+    {
+      "name": "Cutlass Steel",
+      "url": "https://robertsspaceindustries.com/media/7w8rse7wgq0bir/source/DRAKE_CUTLASSBLACK.ctm"
+    },
+    {
+      "name": "Cutlass Blue",
+      "url": "https://media.robertsspaceindustries.com/ww8pshs4npg8i/source.ctm"
+    },
+    {
+      "name": "Cutlass Red",
+      "url": "https://media.robertsspaceindustries.com/f5j9gogwnbh57/source.ctm"
+    },
+    {
+      "name": "Cutter",
+      "url": "https://media.robertsspaceindustries.com/2pyvf2kk53lyn/source.ctm"
+    },
+    {
+      "name": "Cutter Rambler",
+      "url": "https://media.robertsspaceindustries.com/0eb0gbexdlfnc/source.ctm"
+    },
+    {
+      "name": "Cutter Scout",
+      "url": "https://media.robertsspaceindustries.com/7orvmsokx5aqy/source.ctm"
+    },
+    {
+      "name": "Dragonfly Black",
+      "url": "https://robertsspaceindustries.com/media/l4f6394uo04qor/source/DRAKE-Dragonfly.ctm"
+    },
+    {
+      "name": "Dragonfly Yellowjacket",
+      "url": "https://robertsspaceindustries.com/media/l4f6394uo04qor/source/DRAKE-Dragonfly.ctm"
+    },
+    {
+      "name": "Golem",
+      "url": "https://media.robertsspaceindustries.com/p7gxg2sgvs9pd/source.ctm"
+    },
+    {
+      "name": "Golem OX",
+      "url": "https://media.robertsspaceindustries.com/s532r4zzmsqms/source.ctm"
+    },
+    {
+      "name": "Herald",
+      "url": "https://robertsspaceindustries.com/media/3rfns6dn3oc0zr/source/DRAKE_Herald.ctm"
+    },
+    {
+      "name": "Ironclad",
+      "url": "https://media.robertsspaceindustries.com/gz94wdswc1gx4/source.ctm"
+    },
+    {
+      "name": "Ironclad Assault",
+      "url": "https://media.robertsspaceindustries.com/gz94wdswc1gx4/source.ctm"
+    },
+    {
+      "name": "Kraken",
+      "url": "https://robertsspaceindustries.com/media/bkqg6vmixwic8r/source/DRAKE_KRAKEN.ctm"
+    },
+    {
+      "name": "Kraken Privateer",
+      "url": "https://robertsspaceindustries.com/media/bkqg6vmixwic8r/source/DRAKE_KRAKEN.ctm"
+    },
+    {
+      "name": "Mule",
+      "url": "https://media.robertsspaceindustries.com/r39oa88712znw/source.ctm"
+    },
+    {
+      "name": "Pitbull",
+      "url": "https://media.robertsspaceindustries.com/a7e2klipveiia/source.ctm"
+    },
+    {
+      "name": "Vulture",
+      "url": "https://robertsspaceindustries.com/media/8jveur81q9gsyr/source/DRAKE_VULTURE.ctm"
+    },
+    {
+      "name": "Blade",
+      "url": "https://robertsspaceindustries.com/media/pujbt9uhoxz4ir/source/VANDUUL_BLADE_ROTATED4.ctm"
+    },
+    {
+      "name": "Glaive",
+      "url": "https://robertsspaceindustries.com/media/slwxueaytl5pqr/source/VANDUUL-Glaive2.ctm"
+    },
+    {
+      "name": "Prowler",
+      "url": "https://media.robertsspaceindustries.com/fdxvamrt7opj4/source.ctm"
+    },
+    {
+      "name": "Prowler Utility",
+      "url": "https://media.robertsspaceindustries.com/7mcyjsqdebw9j/source.ctm"
+    },
+    {
+      "name": "Stinger",
+      "url": "https://media.robertsspaceindustries.com/chon0e6cyh4ap/source.ctm"
+    },
+    {
+      "name": "Talon",
+      "url": "https://media.robertsspaceindustries.com/19lrc087lssxz/source.ctm"
+    },
+    {
+      "name": "Talon Shrike",
+      "url": "https://media.robertsspaceindustries.com/v20xo7hoq8txv/source.ctm"
+    },
+    {
+      "name": "Railen",
+      "url": "https://media.robertsspaceindustries.com/tssz7488u5fid/source.ctm"
+    },
+    {
+      "name": "Syulen",
+      "url": "https://media.robertsspaceindustries.com/qy4irmrigsx1a/source.ctm"
+    },
+    {
+      "name": "Shiv",
+      "url": "https://media.robertsspaceindustries.com/ktkmd5mcbr0k1/source.ctm"
+    },
+    {
+      "name": "MDC",
+      "url": "https://media.robertsspaceindustries.com/u86byyribprr4/source.ctm"
+    },
+    {
+      "name": "MTC",
+      "url": "https://media.robertsspaceindustries.com/2rvc42zfjg5yn/source.ctm"
+    },
+    {
+      "name": "ROC",
+      "url": "https://media.robertsspaceindustries.com/z4lomjfwpmz1p/source.ctm"
+    },
+    {
+      "name": "ROC-DS",
+      "url": "https://media.robertsspaceindustries.com/lkolu1566gbhk/source.ctm"
+    },
+    {
+      "name": "STV",
+      "url": "https://media.robertsspaceindustries.com/f9pk8cfy0dclh/source.ctm"
+    },
+    {
+      "name": "UTV",
+      "url": "https://media.robertsspaceindustries.com/rtahvu6tt659t/source.ctm"
+    },
+    {
+      "name": "L-21 Wolf",
+      "url": "https://media.robertsspaceindustries.com/9ppk6baqna8li/source.ctm"
+    },
+    {
+      "name": "L-22 Alpha Wolf",
+      "url": "https://media.robertsspaceindustries.com/k474tkm5usaev/source.ctm"
+    },
+    {
+      "name": "P-52 Merlin",
+      "url": "https://robertsspaceindustries.com/media/v35vmkazu407pr/source/KRUGER-Merlin.ctm"
+    },
+    {
+      "name": "P-72 Archimedes",
+      "url": "https://robertsspaceindustries.com/media/xtrbocrcv6aier/source/KRUGER-Archimedes.ctm"
+    },
+    {
+      "name": "Fury",
+      "url": "https://media.robertsspaceindustries.com/kjtrayxqls6wk/source.ctm"
+    },
+    {
+      "name": "Fury LX",
+      "url": "https://media.robertsspaceindustries.com/rnyr2daobfy9t/source.ctm"
+    },
+    {
+      "name": "Fury MX",
+      "url": "https://media.robertsspaceindustries.com/2bwvooii6vr0m/source.ctm"
+    },
+    {
+      "name": "Guardian",
+      "url": "https://media.robertsspaceindustries.com/phfzwmf9f79wf/source.ctm"
+    },
+    {
+      "name": "Guardian MX",
+      "url": "https://media.robertsspaceindustries.com/g3rs9hygkpybo/source.ctm"
+    },
+    {
+      "name": "Guardian QI",
+      "url": "https://media.robertsspaceindustries.com/cjmrvyc497vbu/source.ctm"
+    },
+    {
+      "name": "Pulse LX",
+      "url": "https://media.robertsspaceindustries.com/glwpu3nj4csmg/source.ctm"
+    },
+    {
+      "name": "Razor",
+      "url": "https://robertsspaceindustries.com/media/bitttll0saevhr/source/Razor_31_v2.ctm"
+    },
+    {
+      "name": "Razor EX",
+      "url": "https://robertsspaceindustries.com/media/vu9g4x11mfr9sr/source/MISC_RAZOR_EX.ctm"
+    },
+    {
+      "name": "Razor LX",
+      "url": "https://robertsspaceindustries.com/media/s0o6a3dw3x2hzr/source/MISC_RAZOR_LX.ctm"
+    },
+    {
+      "name": "Endeavor",
+      "url": "https://robertsspaceindustries.com/media/8irwyka793wucr/source/MISC-Endeavor.ctm"
+    },
+    {
+      "name": "Expanse",
+      "url": "https://media.robertsspaceindustries.com/gjedu643ymv6b/source.ctm"
+    },
+    {
+      "name": "Fortune",
+      "url": "https://media.robertsspaceindustries.com/hrdlf2f0r76ho/source.ctm"
+    },
+    {
+      "name": "Freelancer",
+      "url": "https://robertsspaceindustries.com/media/h31sdu0iioxgjr/source/MISC-Freelancer.ctm"
+    },
+    {
+      "name": "Freelancer DUR",
+      "url": "https://media.robertsspaceindustries.com/u6mjeysgv5i9w/source.ctm"
+    },
+    {
+      "name": "Freelancer MAX",
+      "url": "https://media.robertsspaceindustries.com/idapj2mzbcr98/source.ctm"
+    },
+    {
+      "name": "Freelancer MIS",
+      "url": "https://media.robertsspaceindustries.com/hdpf9svz8der6/source.ctm"
+    },
+    {
+      "name": "Hull A",
+      "url": "https://robertsspaceindustries.com/media/8ay6e9wxefsn0r/source/MISC-HullA.ctm"
+    },
+    {
+      "name": "Hull B",
+      "url": "https://media.robertsspaceindustries.com/ka3aq8d9zvhks/source.ctm"
+    },
+    {
+      "name": "Hull C",
+      "url": "https://robertsspaceindustries.com/media/3a5p02rnr932vr/source/MISC-HullC.ctm"
+    },
+    {
+      "name": "Hull D",
+      "url": "https://robertsspaceindustries.com/media/u044v5azkzfwtr/source/MISC-HullD.ctm"
+    },
+    {
+      "name": "Hull E",
+      "url": "https://robertsspaceindustries.com/media/st2avbfbqgj5br/source/MISC-HullE.ctm"
+    },
+    {
+      "name": "Odyssey",
+      "url": "https://media.robertsspaceindustries.com/6zgrthwk046r8/source.ctm"
+    },
+    {
+      "name": "Prospector",
+      "url": "https://robertsspaceindustries.com/media/0lxkekoaagvfrr/source/MISC-Prospector.ctm"
+    },
+    {
+      "name": "Reliant Kore",
+      "url": "https://robertsspaceindustries.com/media/ggvscct10a5hwr/source/MISC-Reliant.ctm"
+    },
+    {
+      "name": "Reliant Mako",
+      "url": "https://robertsspaceindustries.com/media/wsx2jml4c0tb3r/source/MISC-Reliant-News.ctm"
+    },
+    {
+      "name": "Reliant Sen",
+      "url": "https://robertsspaceindustries.com/media/8ivsmrhvb606sr/source/MISC-Reliant-Researcher.ctm"
+    },
+    {
+      "name": "Reliant Tana",
+      "url": "https://robertsspaceindustries.com/media/a3vl48xznz5x1r/source/MISC-Reliant-Skirmisher-1.ctm"
+    },
+    {
+      "name": "Starfarer",
+      "url": "https://robertsspaceindustries.com/media/5vy3qbg8wwm7jr/source/MISC-Starfarer-NEW.ctm"
+    },
+    {
+      "name": "Starfarer Gemini",
+      "url": "https://robertsspaceindustries.com/media/czc4kuisdi8p4r/source/MISC-StarFarer.ctm"
+    },
+    {
+      "name": "Starlancer MAX",
+      "url": "https://media.robertsspaceindustries.com/530mcyp8ze0k7/source.ctm"
+    },
+    {
+      "name": "Starlancer TAC",
+      "url": "https://media.robertsspaceindustries.com/wdzjq0i1s45md/source.ctm"
+    },
+    {
+      "name": "Starlite",
+      "url": "https://media.robertsspaceindustries.com/lpj7ql9st3rse/source.ctm"
+    },
+    {
+      "name": "100i",
+      "url": "https://robertsspaceindustries.com/media/3pbu69b7j423kr/source/Origin_100i_v2.ctm"
+    },
+    {
+      "name": "125a",
+      "url": "https://robertsspaceindustries.com/media/dxlin2lzrdqn8r/source/Origin_100i_combat.ctm"
+    },
+    {
+      "name": "135c",
+      "url": "https://robertsspaceindustries.com/media/bbcxmz62e3aaqr/source/Origin_100i_cargo.ctm"
+    },
+    {
+      "name": "300i",
+      "url": "https://media.robertsspaceindustries.com/wtjb81fo283zb/source.ctm"
+    },
+    {
+      "name": "315p",
+      "url": "https://robertsspaceindustries.com/media/vm94cq29ylqulr/source/ORIGIN-315P3.ctm"
+    },
+    {
+      "name": "325a",
+      "url": "https://robertsspaceindustries.com/media/nc147yxwmx0m6r/source/ORIGIN-325A.ctm"
+    },
+    {
+      "name": "350r",
+      "url": "https://media.robertsspaceindustries.com/5q3xnx86ttntk/source.ctm"
+    },
+    {
+      "name": "400i",
+      "url": "https://media.robertsspaceindustries.com/q2jta1eq8s1bt/source.ctm"
+    },
+    {
+      "name": "600i Explorer",
+      "url": "https://robertsspaceindustries.com/media/wg6k6v0r1ysqyr/source/ORIGIN_600i_EXPLORER.ctm"
+    },
+    {
+      "name": "600i Touring",
+      "url": "https://robertsspaceindustries.com/media/ohndkfqlx55tvr/source/ORIGIN_600i.ctm"
+    },
+    {
+      "name": "890 Jump",
+      "url": "https://media.robertsspaceindustries.com/lzn7sgmz55lyt/source.ctm"
+    },
+    {
+      "name": "G12",
+      "url": "https://media.robertsspaceindustries.com/65vy8lvrl6pmi/source.ctm"
+    },
+    {
+      "name": "G12a",
+      "url": "https://media.robertsspaceindustries.com/arqsgn0u5fgan/source.ctm"
+    },
+    {
+      "name": "G12r",
+      "url": "https://media.robertsspaceindustries.com/35kua74sd3rou/source.ctm"
+    },
+    {
+      "name": "M50",
+      "url": "https://media.robertsspaceindustries.com/8mumlch9tu3q5/source.ctm"
+    },
+    {
+      "name": "M80",
+      "url": "https://media.robertsspaceindustries.com/vx75fqpeoj5nf/source.ctm"
+    },
+    {
+      "name": "X1",
+      "url": "https://robertsspaceindustries.com/media/tyhft6nzbm7car/source/ORIGIN_X1.ctm"
+    },
+    {
+      "name": "X1 Force",
+      "url": "https://robertsspaceindustries.com/media/tyhft6nzbm7car/source/ORIGIN_X1.ctm"
+    },
+    {
+      "name": "X1 Velocity",
+      "url": "https://robertsspaceindustries.com/media/8bzyhqppqtpf0r/source/ORIGIN_X1_VELOCITY.ctm"
+    },
+    {
+      "name": "Apollo Medivac",
+      "url": "https://robertsspaceindustries.com/media/w29tifhncoqi9r/source/RSI-Apollo-Medivac.ctm"
+    },
+    {
+      "name": "Apollo Triage",
+      "url": "https://robertsspaceindustries.com/media/mwpjvt8oedqexr/source/RSI-Apollo-Triage.ctm"
+    },
+    {
+      "name": "Arrastra",
+      "url": "https://media.robertsspaceindustries.com/9eqdurywku3r6/source.ctm"
+    },
+    {
+      "name": "Aurora Mk I CL",
+      "url": "https://robertsspaceindustries.com/media/891b8unsmtxhlr/source/RSI-Aurora2.ctm"
+    },
+    {
+      "name": "Aurora Mk I ES",
+      "url": "https://robertsspaceindustries.com/media/891b8unsmtxhlr/source/RSI-Aurora2.ctm"
+    },
+    {
+      "name": "Aurora Mk I LN",
+      "url": "https://robertsspaceindustries.com/media/891b8unsmtxhlr/source/RSI-Aurora2.ctm"
+    },
+    {
+      "name": "Aurora Mk I MR",
+      "url": "https://robertsspaceindustries.com/media/891b8unsmtxhlr/source/RSI-Aurora2.ctm"
+    },
+    {
+      "name": "Aurora Mk I SE",
+      "url": "https://robertsspaceindustries.com/media/891b8unsmtxhlr/source/RSI-Aurora2.ctm"
+    },
+    {
+      "name": "Aurora Mk I LX",
+      "url": "https://robertsspaceindustries.com/media/0i3lbvne36vx5r/source/RSI_AURORALX.ctm"
+    },
+    {
+      "name": "Aurora Mk II",
+      "url": "https://media.robertsspaceindustries.com/btj5u1v7p3tw5/source.ctm"
+    },
+    {
+      "name": "Constellation Andromeda",
+      "url": "https://robertsspaceindustries.com/media/dwwjcjv8h77str/source/RSI-Constellation-Andromeda_LOD2.ctm"
+    },
+    {
+      "name": "Constellation Aquila",
+      "url": "https://robertsspaceindustries.com/media/exmhfqngu54v8r/source/RSI_CONSTELLATION_AQUILA.ctm"
+    },
+    {
+      "name": "Constellation Phoenix",
+      "url": "https://robertsspaceindustries.com/media/sceeoftxajvufr/source/RSI-Constellation-Phoenix_LOD2.ctm"
+    },
+    {
+      "name": "Constellation Phoenix Emerald",
+      "url": "https://robertsspaceindustries.com/media/sceeoftxajvufr/source/RSI-Constellation-Phoenix_LOD2.ctm"
+    },
+    {
+      "name": "Constellation Taurus",
+      "url": "https://robertsspaceindustries.com/media/gofcvcfhbztatr/source/RSI-Constellation-Taurus_LOD2.ctm"
+    },
+    {
+      "name": "Galaxy",
+      "url": "https://media.robertsspaceindustries.com/vmeefqhbg03j3/source.ctm"
+    },
+    {
+      "name": "Hermes",
+      "url": "https://media.robertsspaceindustries.com/i680xvxq78pj7/source.ctm"
+    },
+    {
+      "name": "Lynx",
+      "url": "https://media.robertsspaceindustries.com/k23zfbh7qeb8u/source.ctm"
+    },
+    {
+      "name": "Mantis",
+      "url": "https://media.robertsspaceindustries.com/czulnarwojmb1/source.ctm"
+    },
+    {
+      "name": "Meteor",
+      "url": "https://media.robertsspaceindustries.com/0u646xp1k2qvl/source.ctm"
+    },
+    {
+      "name": "Orion",
+      "url": "https://robertsspaceindustries.com/media/1v8ddmkxqouesr/source/RSI-Orion2.ctm"
+    },
+    {
+      "name": "Perseus",
+      "url": "https://media.robertsspaceindustries.com/8734v3ynju5cc/source.ctm"
+    },
+    {
+      "name": "Polaris",
+      "url": "https://robertsspaceindustries.com/media/l8fs5ivw36mdvr/source/RSI-Polaris.ctm"
+    },
+    {
+      "name": "Salvation",
+      "url": "https://media.robertsspaceindustries.com/0qmls99k6e1kl/source.ctm"
+    },
+    {
+      "name": "Scorpius",
+      "url": "https://media.robertsspaceindustries.com/3rh0gzlnyxb3y/source.ctm"
+    },
+    {
+      "name": "Scorpius Antares",
+      "url": "https://media.robertsspaceindustries.com/3rh0gzlnyxb3y/source.ctm"
+    },
+    {
+      "name": "Ursa Medivac",
+      "url": "https://media.robertsspaceindustries.com/01ym5jdsmj116/source.ctm"
+    },
+    {
+      "name": "Zeus Mk II CL",
+      "url": "https://media.robertsspaceindustries.com/jiqmrhig5saho/source.ctm"
+    },
+    {
+      "name": "Zeus Mk II ES",
+      "url": "https://media.robertsspaceindustries.com/3pkp6c6k9ulya/source.ctm"
+    },
+    {
+      "name": "Zeus Mk II MR",
+      "url": "https://media.robertsspaceindustries.com/5hkahlymu8xjj/source.ctm"
+    },
+    {
+      "name": "Cyclone",
+      "url": "https://robertsspaceindustries.com/media/pwj6or2stnrmar/source/Cyclone_31_3.ctm"
+    },
+    {
+      "name": "Cyclone AA",
+      "url": "https://robertsspaceindustries.com/media/i1bgu8c0m3r8tr/source/TUMBRIL_CYCLONE_AA.ctm"
+    },
+    {
+      "name": "Cyclone MT",
+      "url": "https://media.robertsspaceindustries.com/jiwipkd7q2ukc/source.ctm"
+    },
+    {
+      "name": "Cyclone RC",
+      "url": "https://robertsspaceindustries.com/media/8cadofq6qo4dyr/source/TUMBRIL_CYCLONE_RC.ctm"
+    },
+    {
+      "name": "Cyclone RN",
+      "url": "https://robertsspaceindustries.com/media/igt24zjwuo5g9r/source/TUMBRIL_CYCLONE_RN.ctm"
+    },
+    {
+      "name": "Cyclone TR",
+      "url": "https://robertsspaceindustries.com/media/b50t19ut6e94tr/source/TUMBRIL_CYCLONE_TR_.ctm"
+    },
+    {
+      "name": "Nova",
+      "url": "https://robertsspaceindustries.com/media/dic42iqv0y11cr/source/TUMBRIL_NOVA_TANK.ctm"
+    },
+    {
+      "name": "Ranger CV",
+      "url": "https://media.robertsspaceindustries.com/ed2k9ve63sy9q/source.ctm"
+    },
+    {
+      "name": "Ranger RC",
+      "url": "https://media.robertsspaceindustries.com/rxfh5x5wynvo3/source.ctm"
+    },
+    {
+      "name": "Ranger TR",
+      "url": "https://media.robertsspaceindustries.com/b7tvpl7woo3s1/source.ctm"
+    },
+    {
+      "name": "Storm",
+      "url": "https://media.robertsspaceindustries.com/n1672tvhloxum/source.ctm"
+    },
+    {
+      "name": "Storm AA",
+      "url": "https://media.robertsspaceindustries.com/3ktsv52k62t3u/source.ctm"
+    },
+    {
+      "name": "Scythe",
+      "url": "https://robertsspaceindustries.com/media/21qi67il3hjrar/source/VANDUUL-Scythe4.ctm"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build a standalone, no-network Fleet Atlas HTML page from public catalog data."""
 from pathlib import Path
+import hashlib
 import json
 import re
 import sys
@@ -140,17 +141,33 @@ def reference_catalog():
 
 bundle = {k: CATALOG[k] for k in ('lanes', 'rulebook', 'codeRules')}
 bundle['referenceShips'] = reference_catalog()
+# Generated silhouettes are baked into the static HTML so the share graphic
+# works offline and never fetches remote images or models for a visitor.
+MODEL_INDEX = json.loads((ROOT / 'catalog' / 'holoviewer-models.json').read_text(encoding='utf-8'))
+PACK = ROOT / 'assets' / 'ship-silhouettes.json'
+assets = json.loads(PACK.read_text(encoding='utf-8'))['images'] if PACK.exists() else {}
+names = {}
+for model in MODEL_INDEX['models']:
+    asset_id = hashlib.sha256(model['url'].encode('utf-8')).hexdigest()[:20]
+    if asset_id not in assets:
+        continue
+    names[key(model['name'])] = asset_id
+bundle['silhouetteAssets'] = assets
+bundle['silhouetteNames'] = names
 # Privacy boundary: never embed fleet entries, pledge metadata, or user-specific values.
 bundle['ships'] = []
 script_json = (json.dumps(bundle, ensure_ascii=False, separators=(',', ':'))
                .replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026'))
 template = (ROOT / 'src' / 'template.html').read_text(encoding='utf-8')
 assert template.count('__EMBED_DATA__') == 1
-html = template.replace('__EMBED_DATA__', script_json)
+assert template.count('__FLEET_SHARE_JS__') == 1
+share_code = (ROOT / 'src' / 'share-map.js').read_text(encoding='utf-8')
+html = template.replace('__EMBED_DATA__', script_json).replace('__FLEET_SHARE_JS__', share_code)
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 if '--dist' in sys.argv:
     dest = ROOT / 'dist'
     dest.mkdir(exist_ok=True)
     (dest / 'index.html').write_text(html, encoding='utf-8')
 print(f'Wrote index.html ({len(html.encode("utf-8")):,} bytes; '
-      f'{len(bundle["referenceShips"])} reference models; no imported fleet)')
+      f'{len(bundle["referenceShips"])} reference models; '
+      f'{len(assets)} silhouette models; no imported fleet)')
