@@ -129,12 +129,16 @@ function fleetMapSvg(fleet,showSecondary,publicShips=referenceModels){
  });
  const bottom=H-FOOT;
  out(`<line x1="${M}" y1="${bottom+28}" x2="${W-M}" y2="${bottom+28}" stroke="#28485b" stroke-width="2"/>`);
- const keyLabels=[['#f6fbff','OWNED','dot'],['#546c79','NOT OWNED','dot'],...(showSecondary?[['#c9b5ff','MODULE OPTION','solid'],['#f1bf76','PLANNED OPTION','dashed']]:[])];
+ const keyLabels=[['#f6fbff','OWNED','plain'],['#f6fbff','NOT OWNED','faded'],...(showSecondary?[['#c9b5ff','MODULE OPTION','solid'],['#f1bf76','PLANNED OPTION','dashed']]:[])];
  keyLabels.forEach(([c,label,style],i)=>{
   const x=M+i*450;
-  if(style==='dot')out(`<circle cx="${x+11}" cy="${bottom+62}" r="7" fill="${c}"/>`);
-  else out(`<rect x="${x+2}" y="${bottom+52}" width="20" height="20" rx="4" fill="${c}" fill-opacity=".25" stroke="${c}" stroke-width="2.8" ${style==='dashed'?'stroke-dasharray="5 3"':''}/>`);
-  out(text(x+32,bottom+67,label,15,'#bbd1df',650));
+  // The key depicts the actual visual treatment: ship shapes show ownership,
+  // and colored frames show optional modules. No unrelated color-coded dots.
+  out(`<path d="M15 2 L19 12 L27 18 L27 23 L19 22 L17 29 L13 29 L11 22 L3 23 L3 18 L11 12 Z" transform="translate(${x+1} ${bottom+43})" fill="#f6fbff" opacity="${style==='faded'?'.13':'1'}"/>`);
+  if(style==='solid'||style==='dashed'){
+   out(`<rect x="${x+1}" y="${bottom+44}" width="30" height="30" rx="5" fill="${c}" fill-opacity=".18" stroke="${c}" stroke-width="2.8" ${style==='dashed'?'stroke-dasharray="5 3"':''}/>`);
+  }
+  out(text(x+39,bottom+67,label,15,'#bbd1df',650));
  });
  out(text(W-M,bottom+67,'Model unavailable? A small diamond indicates no verified silhouette yet.',14,'#879ead',450,'text-anchor="end"'));
  out(text(M,H-57,'MADE BY THE COMMUNITY · Unofficial Star Citizen fan project · Not affiliated with Cloud Imperium Games',14,'#94b1c4',650));

@@ -65,6 +65,8 @@ assert.ok(svg.includes('class="module-outline"'),'Module roles need a visible fr
 assert.ok(svg.includes('stroke="#c9b5ff" stroke-opacity="1" stroke-width="2.8"'),'Available modules need a solid violet frame');
 assert.ok(svg.includes('stroke="#f1bf76" stroke-opacity="1" stroke-width="2.8" stroke-dasharray="5 3"'),'Planned modules need a dashed amber frame');
 assert.ok(svg.includes('>MODULE OPTION</text>')&&svg.includes('>PLANNED OPTION</text>'),'Legend should name both visible module states');
+assert.equal((svg.match(/M15 2 L19 12 L27 18/g)||[]).length,4,'Legend swatches should use recognizable silhouette samples for all four states');
+assert.ok(svg.includes('fill="#f6fbff" opacity=".13"'),'Unowned legend sample should have the same faded treatment as unowned hulls');
 assert.ok(!svg.includes('>OTHER</text>'),'Do not show an empty fallback crew-size column');
 const withUnclassified=build([...example,make('Experimental Test Hull','unknown','review')],true,refs).svg;
 assert.ok(withUnclassified.includes('>OTHER</text>'),'Restore Other when a ship has no recognized crew size');
@@ -79,6 +81,7 @@ assert.ok(!primaryOnly.includes('Planned module'));
 assert.ok(!primaryOnly.includes('Module option'));
 assert.ok(!primaryOnly.includes('module-outline'),'Primary-only export must not include module frames');
 assert.ok(!primaryOnly.includes('>MODULE OPTION</text>'),'Primary-only legend must not include module entries');
+assert.equal((primaryOnly.match(/M15 2 L19 12 L27 18/g)||[]).length,2,'Primary-only legend shows owned and not-owned ship samples');
 assert.throws(()=>build([],true));
 console.log('Silhouette career map: synthetic fixtures passed.');
 
