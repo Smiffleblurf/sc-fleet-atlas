@@ -102,6 +102,23 @@ class BuildTests(unittest.TestCase):
         self.assertIn('.shipchip.module.planned.not-owned', self.template)
         self.assertIn('.shipchip.module.not-owned:hover', self.template)
 
+    def test_hyun_inherent_mining_salvage_mapping(self):
+        hyun = self.bundle['rulebook']['Hyūn']
+        self.assertEqual(hyun['role'], 'mining')
+        self.assertEqual(hyun['tier'], 'solo')
+        self.assertEqual(hyun['secondary'], ['salvage'])
+        self.assertNotIn('moduleRoles', hyun)
+        self.assertEqual(hyun, self.bundle['codeRules']['GAMA_Hyun'])
+        self.assertTrue(any(s['name'] == 'Hyūn' and s['role'] == 'mining' for s in self.bundle['referenceShips']))
+        self.assertIn('gatachyun', self.html)
+        self.assertIn('const dualIndustry=!ground&&(focusDual||equippedDual)', self.html)
+        self.assertIn('description:englishLabel(x.description).slice(0,800)', self.html)
+        self.assertIn('only ships in your imported fleet JSON', self.html)
+
+    def test_live_multi_role_detection(self):
+        subprocess.run(['node', str(ROOT / 'tests' / 'test_live_catalog.cjs')],
+                       cwd=ROOT, check=True, capture_output=True)
+
     def test_search_discovery_metadata(self):
         # Public-facing SEO metadata is present in generated and source HTML.
         canonical = 'https://smiffleblurf.github.io/sc-fleet-atlas/'
