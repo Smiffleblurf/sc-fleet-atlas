@@ -111,6 +111,7 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(hyun, self.bundle['codeRules']['GAMA_Hyun'])
         self.assertTrue(any(s['name'] == 'Hyūn' and s['role'] == 'mining' for s in self.bundle['referenceShips']))
         self.assertIn('gatachyun', self.html)
+        self.assertIn("const q=normalizeName(t);return [s.name", self.html)
         self.assertIn('const dualIndustry=!ground&&(focusDual||equippedDual)', self.html)
         self.assertIn('description:englishLabel(x.description).slice(0,800)', self.html)
         self.assertIn('only ships in your imported fleet JSON', self.html)
