@@ -176,7 +176,7 @@ function repairUnknownFleetEntries(){
   if(ship.role!=='review'&&ship.tier!=='unknown')continue;
   const match=publicClassification(ship.officialName||ship.name,ship.ship_code)||remoteMatchByName.get(normalizeAlias(ship.name));
   if(!match)continue;
-  if(ship.role==='review'&&match.role!=='review'){ship.role=match.role;fixed++}
+  if(ship.role==='review'&&match.role!=='review'){ship.role=match.role;ship.secondary=[...(match.secondary||[])];ship.moduleRoles=[...(match.moduleRoles||[])];fixed++}
   if(ship.tier==='unknown'&&match.tier!=='unknown')ship.tier=match.tier;
  }
  if(fixed&&importedFilename)updateImportSource();
