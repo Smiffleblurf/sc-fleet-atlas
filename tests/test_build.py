@@ -114,6 +114,7 @@ class BuildTests(unittest.TestCase):
         self.assertIn('const dualIndustry=!ground&&(focusDual||equippedDual)', self.html)
         self.assertIn('description:englishLabel(x.description).slice(0,800)', self.html)
         self.assertIn('only ships in your imported fleet JSON', self.html)
+        self.assertIn('ship.secondary=[...(match.secondary||[])];ship.moduleRoles=', self.html)
 
     def test_live_multi_role_detection(self):
         subprocess.run(['node', str(ROOT / 'tests' / 'test_live_catalog.cjs')],
