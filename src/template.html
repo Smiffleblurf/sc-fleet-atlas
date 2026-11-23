@@ -76,7 +76,7 @@ const tierLabels=Object.fromEntries(tiers);
 const colors={COMBAT:'#b28afe',TRANSPORT:'#67baff',EXPLORATION:'#75c8c7',INDUSTRY:'#e4b578',SUPPORT:'#82d4bb',RACING:'#ed91ca',GROUND:'#a5b6d3',FLEX:'#b7a1ec',REVIEW:'#fa9b86'};
 let ships=[];let tab='matrix';
 const normalizeName=x=>String(x||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]/g,'');
-const normalizeAlias=x=>{let n=String(x||'').toLowerCase();n=n.replace(/^constellation mk iv /,'constellation ').replace(/^hercules starlifter ([acm]2)$/,'$1 hercules').replace(/^([0-9]{3}[a-z]) (explorer|fighter|racer)$/,'$1').replace(/^reliant (mako|sen|tana) - .*$/,'reliant $1').replace(/^nova tank$/,'nova').replace(/^ursa rover$/,'ursa');return normalizeName(n)};
+const normalizeAlias=x=>{let n=String(x||'').toLowerCase();n=n.replace(/^constellation mk iv /,'constellation ').replace(/^hercules starlifter ([acm]2)$/,'$1 hercules').replace(/^([0-9]{3}[a-z]) (explorer|fighter|racer)$/,'$1').replace(/^reliant (mako|sen|tana) - .*$/,'reliant $1').replace(/^nova tank$/,'nova').replace(/^ursa rover$/,'ursa');const k=normalizeName(n);return k==='gatachyun'?'hyun':k};
 // The checked-in catalog is an offline fallback. Live references are public ship data only.
 // The user's imported hangar is never included in a network request or in localStorage.
 const BUILTIN_REFERENCE=BUNDLE.referenceShips||[];
@@ -86,7 +86,7 @@ let importedFilename='';
 const LIVE_CATALOG_URL='https://api.star-citizen.wiki/api/shipmatrix/vehicles';
 const LIVE_GROUND_URL='https://api.star-citizen.wiki/api/ground-vehicles';
 const COMMUNITY_BACKUP_URL='https://raw.githubusercontent.com/meoiswa/rsi-ship-matrix/main/data/ships.json';
-const CATALOG_CACHE_KEY='scfa-public-ship-catalog-v4';
+const CATALOG_CACHE_KEY='scfa-public-ship-catalog-v5';
 const CATALOG_CACHE_AGE=12*60*60*1000;
 const SECONDARY_PREF_KEY='scfa-include-secondary-v1';
 const KNOWN_GROUND=/^(nox|dragonfly|hoverquad|g12|x1|ranger|cyclone|pulse|roc|ptv|stv|utv|mule|ursa|nova|storm|atls|csv-sm|lynx|mdc|mtc|spartan|ballista|centurion)(\b|[- ])/i;
@@ -104,12 +104,23 @@ function classifyPublicShip(row){
  if(!name)return null;
  const category=englishLabel(row.classification||row.class||row.type||row.category).toLowerCase();
  const focus=englishLabel(row.foci||row.focus||row.role||row.career||row.vehicle_role||row.description).toLowerCase().slice(0,240);
+ const description=englishLabel(row.description).toLowerCase().slice(0,800);
  const ground=category.includes('ground')||category.includes('gravlev')||row.is_ground_vehicle===true||row.is_vehicle===true||row.is_gravlev===true||KNOWN_GROUND.test(name);
  const crewV=row.crewMax??row.max_crew??row.crew_max??row.crew?.max??row.crew??row.crewMin??row.min_crew??row.crew?.min;
  const crew=Number(crewV);const crewN=Number.isFinite(crew)&&crew>0&&crew<500?crew:null;
  const phrase=category+' '+focus;
+ // Exact dual-industrial focus is trustworthy; descriptions require an explicit
+ // built-in equipment claim. Mere cargo capacity and planned modules do not
+ // establish a profession.
+ const focusDual=/\bmining\b/.test(focus)&&/\bsalvag(?:e|ing)\b/.test(focus);
+ const equippedDual=/\b(?:industrial|generalist|multi.?role)\b/.test(category+' '+focus)&&
+   /\bmining\b/.test(description)&&/\bsalvag(?:e|ing)\b/.test(description)&&
+   /\b(?:standard|equipped|equipment|built|designed|both)\b/.test(description)&&
+   !/\b(?:modules?|modular|planned|future|concept)\b/.test(description);
+ const dualIndustry=!ground&&(focusDual||equippedDual);
  let role='review';
  if(ground){role=/mining|industrial/.test(phrase)&&/^roc/i.test(name)?'surfacemining':/racing|competition/.test(phrase)?'groundracing':/combat|anti.?air|military|assault|fighter/.test(phrase)?'groundcombat':/recon|explor|scout/.test(phrase)?'groundscout':'groundutility'}
+ else if(dualIndustry)role='mining';
  else if(/science|research/.test(phrase))role='science';
  else if(/refin|processing/.test(phrase))role='refining';
  else if(/mining|prospect/.test(phrase))role='mining';
@@ -142,7 +153,7 @@ function classifyPublicShip(row){
  else if(/starter|multi.?role|generalist/.test(phrase))role='generalist';
  // A novel name without reliable career metadata must not be invented as a fighter.
  const tier=tierForCount(crewN,ground);
- return {name, role:validRole(role)?role:'review',tier,secondary:[],manufacturer:englishLabel(row.manufacturer).slice(0,120),source:'live'};
+ return {name, role:validRole(role)?role:'review',tier,secondary:dualIndustry?['salvage']:[],manufacturer:englishLabel(row.manufacturer).slice(0,120),source:'live'};
 }
 function rebuildReferenceModels(liveRows=[]){
  const map=new Map();
@@ -165,7 +176,7 @@ function repairUnknownFleetEntries(){
   if(ship.role!=='review'&&ship.tier!=='unknown')continue;
   const match=publicClassification(ship.officialName||ship.name,ship.ship_code)||remoteMatchByName.get(normalizeAlias(ship.name));
   if(!match)continue;
-  if(ship.role==='review'&&match.role!=='review'){ship.role=match.role;fixed++}
+  if(ship.role==='review'&&match.role!=='review'){ship.role=match.role;ship.secondary=[...(match.secondary||[])];ship.moduleRoles=[...(match.moduleRoles||[])];fixed++}
   if(ship.tier==='unknown'&&match.tier!=='unknown')ship.tier=match.tier;
  }
  if(fixed&&importedFilename)updateImportSource();
@@ -241,6 +252,7 @@ async function syncPublicCatalog(force=false){
    name:englishLabel(x.name||x.ship_name||x.vehicle_name),
    classification:englishLabel(x.classification||x.class||x.type||x.category),
    focus:englishLabel(x.foci||x.focus||x.role||x.career||x.vehicle_role),
+    description:englishLabel(x.description).slice(0,800),
    crewMax:x.crewMax??x.max_crew??x.crew_max??x.crew?.max??x.crew??x.crewMin??x.min_crew??null,
    is_ground_vehicle:x.is_ground_vehicle===true||x.is_vehicle===true,
    is_gravlev:x.is_gravlev===true,
@@ -264,7 +276,7 @@ const hasRole=(s,r,secondary)=>s.role===r||(secondary && s.secondary.includes(r)
 const moduleRoleFor=(s,r)=>s.moduleRoles?.find(m=>m.role===r)||null;
 const hasDisplayRole=(s,r,secondary)=>hasRole(s,r,secondary)||(secondary&&!!moduleRoleFor(s,r));
 const currentFilter=()=>({text:el('search').value.trim().toLowerCase(),lane:el('laneFilter').value,secondary:el('includeSecondary').checked,showUnowned:el('showUnowned').checked,hide:el('hideEmpty').checked});
-const matchesText=(s,t)=>!t||[s.name,s.manufacturer,s.ship_code,roleById[s.role]?.label,roleById[s.role]?.laneLabel,...s.secondary.map(r=>roleById[r]?.label),...(s.moduleRoles||[]).flatMap(m=>[m.module,roleById[m.role]?.label])].some(x=>(x||'').toLowerCase().includes(t));
+const matchesText=(s,t)=>{if(!t)return true;const q=normalizeName(t);return [s.name,s.manufacturer,s.ship_code,roleById[s.role]?.label,roleById[s.role]?.laneLabel,...s.secondary.map(r=>roleById[r]?.label),...(s.moduleRoles||[]).flatMap(m=>[m.module,roleById[m.role]?.label])].some(x=>{const value=String(x||'');return value.toLowerCase().includes(t)||(q&&normalizeName(value).includes(q))})};
 const matchesLane=(s,lane,secondary)=>lane==='ALL'||roleById[s.role]?.lane===lane||(secondary&&(s.secondary.some(r=>roleById[r]?.lane===lane)||(s.moduleRoles||[]).some(m=>roleById[m.role]?.lane===lane)));
 function getFiltered(){const f=currentFilter();return ships.filter(s=>matchesText(s,f.text)&&matchesLane(s,f.lane,f.secondary))}
 const sumCount=(arr,role,sec)=>arr.reduce((n,s)=>n+(hasRole(s,role,sec)?1:0),0);
@@ -354,7 +366,7 @@ function renderRoster(){
   return inherent.join(' · ')+(inherent.length&&modules.length?' · ':'')+modules.join(' ')||'—';
  };
  const rows=a.map(s=>`<tr><td><div class="ship-name">${esc(s.name)}</div><div class="dim">${esc(s.ship_code)}</div></td><td>${esc(s.manufacturer)}</td><td><select data-edit="role" data-id="${s._id}" aria-label="Role for ${esc(s.name)}">${roleOpts(s.role)}</select></td><td><select data-edit="tier" data-id="${s._id}" aria-label="Tier for ${esc(s.name)}">${tierOpts(s.tier)}</select></td><td><div class="dim" title="${esc(s.note||'')}">${otherCapabilities(s)}</div></td><td>${s.lti?'<span class="tag green">LTI</span>':'<span class="dim">—</span>'}</td></tr>`).join('');
- el('content').innerHTML=`<section class="block"><div class="block-title"><div class="lane-accent"></div><h2>Ship inventory</h2><span class="count">${a.length} entries • editable roles and tiers</span></div><div class="explainer">Change <strong>primary role</strong> or <strong>crew-tier assignment</strong> directly below. Changes immediately affect the chart and are included in <strong>Export mapped JSON</strong>. To reuse them after reopening this HTML, import that mapped JSON. Optional module roles are possibilities, not confirmed installations. Editing a ship type updates matching copies.</div><div class="table-viewport"><table class="roster"><thead><tr><th style="width:20%">Ship / vehicle</th><th style="width:20%">Manufacturer</th><th style="width:25%">Primary profession</th><th style="width:17%">Crew tier</th><th>Other capabilities</th><th>LTI</th></tr></thead><tbody>${rows||'<tr><td colspan="6">No ships match this search.</td></tr>'}</tbody></table></div></section>`;
+ el('content').innerHTML=`<section class="block"><div class="block-title"><div class="lane-accent"></div><h2>Ship inventory</h2><span class="count">${a.length} entries • editable roles and tiers</span></div><div class="explainer">This tab lists <strong>only ships in your imported fleet JSON</strong>. New unowned ships are shown in the Profession Matrix, not this inventory. If a newly acquired ship is missing here, export and import a fresh HangarXPLOR JSON. Change <strong>primary role</strong> or <strong>crew-tier assignment</strong> directly below. Changes immediately affect the chart and are included in <strong>Export mapped JSON</strong>. To reuse them after reopening this HTML, import that mapped JSON. Optional module roles are possibilities, not confirmed installations. Editing a ship type updates matching copies.</div><div class="table-viewport"><table class="roster"><thead><tr><th style="width:20%">Ship / vehicle</th><th style="width:20%">Manufacturer</th><th style="width:25%">Primary profession</th><th style="width:17%">Crew tier</th><th>Other capabilities</th><th>LTI</th></tr></thead><tbody>${rows||'<tr><td colspan="6">No imported ships match this search. For unowned ships, check the Profession Matrix.</td></tr>'}</tbody></table></div></section>`;
 }
 function showEmpty(){el('content').innerHTML=`<section class="panel" style="text-align:center;padding:55px 20px"><h2 style="font-size:24px;margin:0 0 12px">Your fleet starts here</h2><p>Import a HangarXPLOR-style JSON file to create your profession map and gap analysis. No fleet is preloaded, and your file stays in this browser.</p><p>Don't have a file yet? <a href="#importGuide" id="openImportGuide">See how to export your hangar JSON</a>.</p><label class="btn primary filebutton" style="margin-top:12px">↑ Choose fleet JSON <input type="file" accept=".json,application/json" id="emptyImport"></label><p style="font-size:11px">Your fleet is never uploaded to a server. No accounts or trackers.</p></section>`;el('emptyImport').addEventListener('change',handleImport);el('openImportGuide').addEventListener('click',()=>{el('importGuide').open=true})}
 function render(){renderKpis();document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab)); if(tab==='matrix')renderMatrix(); else if(tab==='coverage')renderCoverage(); else renderRoster()}

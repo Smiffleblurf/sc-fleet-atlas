@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_reviewed": "2026-11-16",
+  "last_reviewed": "2026-11-23",
   "note": "Unofficial, editorial profession/crew planning classifications, not live CIG specs. Community review encouraged.",
   "lanes": [
     {
@@ -525,10 +525,26 @@
       "tier": "multi",
       "secondary": [],
       "moduleRoles": [
-        {"role": "medical", "module": "Medical Bay Pod", "status": "planned"},
-        {"role": "agriculture", "module": "Biodome Pods", "status": "planned"},
-        {"role": "scout", "module": "Telescope Array", "status": "planned"},
-        {"role": "carrier", "module": "Landing Bay Pod", "status": "planned"}
+        {
+          "role": "medical",
+          "module": "Medical Bay Pod",
+          "status": "planned"
+        },
+        {
+          "role": "agriculture",
+          "module": "Biodome Pods",
+          "status": "planned"
+        },
+        {
+          "role": "scout",
+          "module": "Telescope Array",
+          "status": "planned"
+        },
+        {
+          "role": "carrier",
+          "module": "Landing Bay Pod",
+          "status": "planned"
+        }
       ],
       "note": "Concept vessel; module gameplay is not currently available."
     },
@@ -606,9 +622,21 @@
       "tier": "multi",
       "secondary": [],
       "moduleRoles": [
-        {"role": "freight", "module": "Cargo Module", "status": "available"},
-        {"role": "medical", "module": "Med Bay Module", "status": "available"},
-        {"role": "refining", "module": "Refinery Module", "status": "planned"}
+        {
+          "role": "freight",
+          "module": "Cargo Module",
+          "status": "available"
+        },
+        {
+          "role": "medical",
+          "module": "Med Bay Module",
+          "status": "available"
+        },
+        {
+          "role": "refining",
+          "module": "Refinery Module",
+          "status": "planned"
+        }
       ],
       "note": "Only one central module can be installed at a time; owning the hull does not imply owning a module."
     },
@@ -992,9 +1020,21 @@
       "tier": "multi",
       "secondary": [],
       "moduleRoles": [
-        {"role": "strike", "module": "Torpedo Modules (bow/stern)", "status": "available"},
-        {"role": "freight", "module": "Cargo Modules (bow/stern)", "status": "available"},
-        {"role": "assault", "module": "Dropship Module (bow)", "status": "planned"}
+        {
+          "role": "strike",
+          "module": "Torpedo Modules (bow/stern)",
+          "status": "available"
+        },
+        {
+          "role": "freight",
+          "module": "Cargo Modules (bow/stern)",
+          "status": "available"
+        },
+        {
+          "role": "assault",
+          "module": "Dropship Module (bow)",
+          "status": "planned"
+        }
       ],
       "note": "Two independent module bays; torpedo and cargo configurations can be mixed."
     },
@@ -1186,6 +1226,14 @@
       "secondary": [
         "ew"
       ]
+    },
+    "Hyūn": {
+      "role": "mining",
+      "tier": "solo",
+      "secondary": [
+        "salvage"
+      ],
+      "note": "IAE 2956: Industrial generalist with mining and salvage equipment included as standard. 32 SCU cargo and 32 SCU ore storage; neither profession requires a module. Source: https://robertsspaceindustries.com/en/comm-link/transmission/21349-Gatac-Hy-n"
     }
   },
   "codeRules": {
@@ -1514,10 +1562,26 @@
       "tier": "multi",
       "secondary": [],
       "moduleRoles": [
-        {"role": "medical", "module": "Medical Bay Pod", "status": "planned"},
-        {"role": "agriculture", "module": "Biodome Pods", "status": "planned"},
-        {"role": "scout", "module": "Telescope Array", "status": "planned"},
-        {"role": "carrier", "module": "Landing Bay Pod", "status": "planned"}
+        {
+          "role": "medical",
+          "module": "Medical Bay Pod",
+          "status": "planned"
+        },
+        {
+          "role": "agriculture",
+          "module": "Biodome Pods",
+          "status": "planned"
+        },
+        {
+          "role": "scout",
+          "module": "Telescope Array",
+          "status": "planned"
+        },
+        {
+          "role": "carrier",
+          "module": "Landing Bay Pod",
+          "status": "planned"
+        }
       ],
       "note": "Concept vessel; module gameplay is not currently available."
     },
@@ -1585,9 +1649,21 @@
       "tier": "multi",
       "secondary": [],
       "moduleRoles": [
-        {"role": "freight", "module": "Cargo Module", "status": "available"},
-        {"role": "medical", "module": "Med Bay Module", "status": "available"},
-        {"role": "refining", "module": "Refinery Module", "status": "planned"}
+        {
+          "role": "freight",
+          "module": "Cargo Module",
+          "status": "available"
+        },
+        {
+          "role": "medical",
+          "module": "Med Bay Module",
+          "status": "available"
+        },
+        {
+          "role": "refining",
+          "module": "Refinery Module",
+          "status": "planned"
+        }
       ],
       "note": "Only one central module can be installed at a time; owning the hull does not imply owning a module."
     },
@@ -1964,9 +2040,21 @@
       "tier": "multi",
       "secondary": [],
       "moduleRoles": [
-        {"role": "strike", "module": "Torpedo Modules (bow/stern)", "status": "available"},
-        {"role": "freight", "module": "Cargo Modules (bow/stern)", "status": "available"},
-        {"role": "assault", "module": "Dropship Module (bow)", "status": "planned"}
+        {
+          "role": "strike",
+          "module": "Torpedo Modules (bow/stern)",
+          "status": "available"
+        },
+        {
+          "role": "freight",
+          "module": "Cargo Modules (bow/stern)",
+          "status": "available"
+        },
+        {
+          "role": "assault",
+          "module": "Dropship Module (bow)",
+          "status": "planned"
+        }
       ],
       "note": "Two independent module bays; torpedo and cargo configurations can be mixed."
     },
@@ -2143,6 +2231,14 @@
       "secondary": [
         "ew"
       ]
+    },
+    "GAMA_Hyun": {
+      "role": "mining",
+      "tier": "solo",
+      "secondary": [
+        "salvage"
+      ],
+      "note": "IAE 2956: Industrial generalist with mining and salvage equipment included as standard. 32 SCU cargo and 32 SCU ore storage; neither profession requires a module. Source: https://robertsspaceindustries.com/en/comm-link/transmission/21349-Gatac-Hy-n"
     }
   }
 }
