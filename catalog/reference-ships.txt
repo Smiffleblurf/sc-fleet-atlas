@@ -244,3 +244,4 @@ Ranger TR|Ground|Combat|1
 Storm|Ground|Combat Support|1
 Storm AA|Ground|Combat Support|1
 Scythe|Combat|Medium Fighter|1
+Hyūn|Industrial|Mining / Salvage|1
