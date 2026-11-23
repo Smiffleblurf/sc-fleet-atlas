@@ -276,7 +276,7 @@ const hasRole=(s,r,secondary)=>s.role===r||(secondary && s.secondary.includes(r)
 const moduleRoleFor=(s,r)=>s.moduleRoles?.find(m=>m.role===r)||null;
 const hasDisplayRole=(s,r,secondary)=>hasRole(s,r,secondary)||(secondary&&!!moduleRoleFor(s,r));
 const currentFilter=()=>({text:el('search').value.trim().toLowerCase(),lane:el('laneFilter').value,secondary:el('includeSecondary').checked,showUnowned:el('showUnowned').checked,hide:el('hideEmpty').checked});
-const matchesText=(s,t)=>!t||[s.name,s.manufacturer,s.ship_code,roleById[s.role]?.label,roleById[s.role]?.laneLabel,...s.secondary.map(r=>roleById[r]?.label),...(s.moduleRoles||[]).flatMap(m=>[m.module,roleById[m.role]?.label])].some(x=>(x||'').toLowerCase().includes(t));
+const matchesText=(s,t)=>{if(!t)return true;const q=normalizeName(t);return [s.name,s.manufacturer,s.ship_code,roleById[s.role]?.label,roleById[s.role]?.laneLabel,...s.secondary.map(r=>roleById[r]?.label),...(s.moduleRoles||[]).flatMap(m=>[m.module,roleById[m.role]?.label])].some(x=>{const value=String(x||'');return value.toLowerCase().includes(t)||(q&&normalizeName(value).includes(q))})};
 const matchesLane=(s,lane,secondary)=>lane==='ALL'||roleById[s.role]?.lane===lane||(secondary&&(s.secondary.some(r=>roleById[r]?.lane===lane)||(s.moduleRoles||[]).some(m=>roleById[m.role]?.lane===lane)));
 function getFiltered(){const f=currentFilter();return ships.filter(s=>matchesText(s,f.text)&&matchesLane(s,f.lane,f.secondary))}
 const sumCount=(arr,role,sec)=>arr.reduce((n,s)=>n+(hasRole(s,role,sec)?1:0),0);
